@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Splash Screen</title>
+<style>
+  body {
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #f7f7f7;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+  }
+
+  .logo {
+    font-size: 3rem;
+    font-weight: bold;
+    color: #3498db;
+    animation: fadeIn 4s ease-in-out backwards;
+    border-radius: 30px;
+  }
+
+  @keyframes fadeIn {
+    0% {
+      opacity: 0;
+      transform: translateY(-50px);
+    }
+    100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+</style>
+</head>
+<body>
+<div class="logo"><image src="WAHAB.png"></image></div>
+<script>
+  setTimeout(function() {
+    window.location.href = "index.html";
+  }, 4000); // Redirect after 3 seconds
+</script>
+</body>
+</html>
