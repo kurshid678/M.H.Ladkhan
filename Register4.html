@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>All Registers</title>
 <style> 
-    body {
-        font-family: Arial, sans-serif;
+   body {
+        font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         position: fixed;
         background-color: #000000;
         width: 100vw;
@@ -70,17 +70,23 @@
         font-size: 15px;
         color: #fffefe;
         overflow-x: auto;
+        background: -webkit-linear-gradient(#62a0a8,#7c63a5);
     }
 
     th, td {
-        border: 1px solid #4b4747;
+        border: 2px solid #fffcfc;
         padding: 8px;
         text-align: left;
         cursor: pointer;
+        border-right: 0px;
+        border-bottom: 0px;
+        border-radius: 3px;
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     }
 
     th {
-        background-color: #000000;
+        background:-webkit-linear-gradient(#62a0a8,#644b8f);
+    }
     }
      td:hover{
      background-color: #4b4747;
@@ -93,7 +99,7 @@
         left: 70%;
         transform: translate(-50%, -50%);
         cursor: move;
-        background-color: #007bff;
+        background:repeating-linear-gradient(#eee,#dd80d1);
         padding: 20px;
         box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         border-radius: 5px;
@@ -102,7 +108,7 @@
         width: 40vw;
         height: 60vh;
         overflow: auto;
-        color: #ffffff;
+        color: #000000;
     }
     
     #detailView h2 {
@@ -130,7 +136,7 @@
 
 #detailView button {
     padding: 5px 10px;
-    background-color: #007bff;
+    background-color: #e4d761;
     color: white;
     border: none;
     cursor: pointer;
@@ -138,7 +144,7 @@
 }
 
 #detailView button:hover {
-    background-color: #0056b3;
+    background-color: #769ec9;
 }
 
     @keyframes fadeIn {
@@ -176,10 +182,11 @@
         left: 10px;
         z-index: 1001; /* Ensure the button is above the detail view */
         padding: 5px 10px;
-        background-color: #007bff;
-        color: white;
+        background-color: #e6f061;
+        color: rgb(0, 0, 0);
         border: none;
         cursor: pointer;
+       
     }
     
 .sidebar {
@@ -188,7 +195,7 @@
    position: fixed;
    top: 0;
    left: 0;
-   background-color: #d8cece;
+   background: -webkit-linear-gradient(#f6f9fa,#77c09c);
    overflow-x: hidden;
    transition: 0.5s;
    padding-top: 0px;
@@ -230,12 +237,15 @@ padding-top: 0;
   width: 50%;  
 }
 span{
-font-size: larger;
+font-size: 20px;
 }
 .highlight {
     background-color: rgb(233, 233, 218);
     color: black;
-}
+} 
+    
+       
+  
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.4/xlsx.full.min.js"></script>
 </head>
@@ -248,7 +258,7 @@ font-size: larger;
      <a href="Register3of1.html">Register(3 of 1)</a>
      <a href="Register4.html">Register4</a>
       <a href="#">About</a>
-      <a class="Logout" href="#">Logout</a>
+      <a class="Logout" href="login1.html">Logout</a>
     </div>
    
 <button class="toggle-btn" onclick="toggleSidebar()">☰</button>
