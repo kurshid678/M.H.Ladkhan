@@ -408,7 +408,7 @@ document.getElementById("searchInput").addEventListener("keyup", function() {
     } else {
         for (i = 1; i < tr.length; i++) {
             tr[i].style.display = "none";
-            td = tr[i].getElementsByTagName("td")[2]; // Search only in the third column (index 2)
+            td = tr[i].getElementsByTagName("td")[1]; // Search only in the third column (index 2)
             if (td) {
                 txtValue = td.textContent || td.innerText;
                 if (txtValue.toUpperCase().indexOf(filter) > -1) {
