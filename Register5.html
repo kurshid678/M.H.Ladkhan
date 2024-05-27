@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>All Registers</title>
 <style> 
-   body {
+  body {
         font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         position: fixed;
         background-color: #000000;
@@ -87,7 +87,7 @@
     th {
         background:-webkit-linear-gradient(#62a0a8,#644b8f);
     }
-    }
+    
      td:hover{
      background-color: #4b4747;
     transition: background-color 0.2s ease;
@@ -98,7 +98,7 @@
         top: 50%;
         left: 70%;
         transform: translate(-50%, -50%);
-        cursor: move;
+        cursor: copy;
         background:repeating-linear-gradient(#eee,#dd80d1);
         padding: 20px;
         box-shadow: 0 4px 8px rgba(0,0,0,0.1);
@@ -109,11 +109,12 @@
         height: 60vh;
         overflow: auto;
         color: #000000;
+        
     }
     
     #detailView h2 {
     margin-top: 0;
-    font-size: 24px;
+    font-size: 20px;
     color: #333;
     border-bottom: 1px solid #ccc;
     padding-bottom: 10px;
@@ -176,18 +177,6 @@
     .tab{
     width: 95vw;
     height: 80vh;
-    background: linear-gradient(135deg, #e0e0e0, #ffffff);
-    border-radius: 20px 20px 10px 10px;
-    box-shadow: 0 8px 4px rgba(255, 255, 255, 0.5), 
-                0 16px 12px rgba(255, 255, 255, 0.5), 
-                0 20px 28px rgba(255, 255, 255, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow: hidden;
-    position: relative;
-    border: 2px outset #000000;
-    margin-right: 0;
     
     }
 
@@ -217,7 +206,6 @@
    display: flex;
    flex-direction: column;
    gap: 30px;
-   z-index: 1001;
 }
 .sidebar a {
    padding: 10px 15px;
@@ -259,9 +247,6 @@ font-size: 20px;
     background-color: rgb(233, 233, 218);
     color: black;
 } 
-    
-       
-  
 </style>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.17.4/xlsx.full.min.js"></script>
 </head>
@@ -273,7 +258,7 @@ font-size: 20px;
         <button class="toggle-btx" onclick="toggleSidebar()">☰</button>
      <a href="Register3of1.html">Register(3 of 1)</a>
      <a href="Register4.html">Register4</a>
-      <a href="#">About</a>
+      <a href="register5.html">Register5</a>
       <a class="Logout" href="login1.html">Logout</a>
     </div>
    
@@ -295,13 +280,12 @@ font-size: 20px;
 <script>
 var jsonData = [];
 
-var excelFileUrl = "https://docs.google.com/spreadsheets/d/1UunN2SLoXUJCMPqTSqCmXHMfvp5aZBo7Zm_zar8kCXA/export?format=xlsx";
-
+var excelFileUrl = "https://docs.google.com/spreadsheets/d/1uZuW4r-rAhTXLcGMmI-Xh_9CzDi5aZ4WRUKdnziPC5k/export?format=xlsx";
 fetch(excelFileUrl)
     .then(response => response.arrayBuffer())
     .then(data => {
         var workbook = XLSX.read(new Uint8Array(data), { type: "array" });
-        var sheetName = workbook.SheetNames[1];
+        var sheetName = workbook.SheetNames[2];
         var sheet = workbook.Sheets[sheetName];
         jsonData = XLSX.utils.sheet_to_json(sheet, {
             header: 1,
@@ -309,6 +293,7 @@ fetch(excelFileUrl)
             dateNF: 'yyyy-mm-dd',
             cellDates: true,
             defval: '-------'
+           
         });
 
         displayTable();
@@ -358,7 +343,7 @@ var holdTimer;
 function showDetailView(index) {
     var detailView = document.getElementById("detailView");
     var row = jsonData[index - 1]; // Adjust index to match JSON data
-    var labels = ["Admission No ದಾಖಲೆ ನಂಬರ್","Cumulative Record No Date of opening","Name in full ಪೂರ್ಣ ಹೆಸರು","Boy/Girl ಹುಡುಗ /ಹುಡುಗಿ","Date of Birth age in years ಹುಟ್ಟಿದ ತಾರಿಖು ತಿಂಗಳ ಇಸ್ವಿ","father's name  and occupation ತಂದೆಯ ಹೆಸರು ಮತ್ತು ಕಸಬು","Parents annual income ತಂದೆ ತಾಯಿಗಳ ವಾರ್ಷಿಕ ವರಮಾನ","Number of dependents ಆಶ್ರಿತರ ಸಂಖ್ಯೆ","Nationality,religion and Caste ಜಾತಿ ಹಾಗೂ ಜನಾಂಗ","Mother Tounge ಮಾತೃ ಭಾಷೆ","Gurdian's name and address ಪೊಷಕರ ಹೆಸರು ಮತ್ತು ವಿಳಾಸ","Permanent address of the pupil ವಿದ್ಯಾರ್ಥಿಯ ಖಾಯಂ ವಿಳಾಸ","Last School attended ಹಿಂದನ ಪಾಠಶಾಲೆ","Standard last studied ಹಿಂದನ ತರಗತಿ","No and date of transfer certificate ವರ್ಗಾವಣೆ ಚೀಟಿಯ ನಂ. ಮತ್ತು ತಾರೀಖು","standard to which admitted with section ದಾಖಲು ಮಾಡಿದ ತರಗತಿ ಮತ್ತು ವರ್ಗ","Date of admission ದಾಖಲಾದ ತಾರೀಖು","subsequent progress of the pupil in the school every year from the  date of admissions (class to be attended) ದಾಖಲಾದಾಗಿನಿಂದ ಪ್ರತಿ ವರ್ಷದ ವಿದ್ಯಾರ್ಥಿ ಗಳಿಸಿದ ಪ್ರಗತಿ","class on leaving ಪಾಠಶಾಲೆಯನ್ನು ಬಿಟ್ಟಾಗ ಓದುತ್ತಿದ್ದ ತರಗತಿ","Date of leaving the school ಪಾಠಶಾಲೆಯನ್ನು ಬಿಟ್ಟ ತಾರೀಖು","Reasons for leaving ಪಾಠಶಾಲೆಯನ್ನು ಬಿಡಲು ಕಾರಣಗಳು","No and date of transfer certificate issued ವರ್ಗಾವಣೆ ಚೀಟಿಯ ನಂ. ಮತ್ತು ತಾರೀಖು","Remarks ಷರಾ"]; // Your desired labels
+    var labels = ["ದಾಖಲಾತಿ ಸಂಖ್ಯೆ /ವರ್ಷ Admoission No/year", "ವಿದ್ಯಾರ್ಥಿ/ನಿಯ ಪೂರ್ಣ ಹೆಸರು Student's Name in Full","ಹುಡುಗ ಅಥವಾ ಹುಡುಗಿ Boy/Girl","ಹುಟ್ಟಿದ ತಾರೀಖು ಮತ್ತು ವಯಸ್ಸು Date of Birth  an age ಅಂಕಿ ಮತ್ತು ಅಕ್ಷರಗಳಲ್ಲಿ In Figures and words","ತಂದೆ ಮತ್ತು ತಾಯಿಯ ಹೆಸರು father's and mother's Name","ತಂದೆಯ ಕಸಬು Father's accupation","ತಂದೆಯ ವಾರ್ಷಿಕ ವರಮಾನ Parent annual income","ಆಶ್ರಿತರ ಸಂಖ್ಯೆ Nos of dependent","ರಾಷ್ಟ್ರಿಯತೆ ಜಾತಿ ಮತ್ತು ಧರ್ಮ Nationality and caste and religion","ಮಾತೃ ಭಾಷೆ Mother Tough","ತಂದೆ ಅಥವಾ ಪೋಷಕರ ಹೆಸರು ಮತ್ತು ವಿಳಾಸ Father's and Guardian's Name and address","ವಿದ್ಯಾರ್ಥಿಯ ಖಾಯಂ ವಿಳಾಸ Permnent address of student","ಹೋಗುತ್ತಿದ್ದ ಹಿಂದಿನ ಪಾಠಶಾಲೆ Last school attended","ಹಿಂದಿನಶಾಲೆಯಲ್ಲಿ ಓದುತ್ತಿದ್ದ ತರಗಿತಿ Standerd Last studied","ಹಿಂದಿನಶಾಲೆಯ ವರ್ಗಾವಣೆ ಪತ್ರದ ನಂ ಮತ್ತು ದಿನಾಂಕ No .and Date of transfer certificate","ಪ್ರಸ್ತುತ ಶಾಲೆಗೆ ದಾಖಲೆ ಮಾಡಿದ ತರಗತಿ Standerd to which admitted with the section","ದಾಖಲಾತಿ ತಾರೀಖು Date of Admission","ತಂದೆ /ತಾಯಿ /ಪೋಷಕರ ಸಹಿ Father/Mother /Guardian Singnature /ಜನ್ಮಸ್ಥಳ","ದಾಖಲಾದಾಗಿನಿಂದ ಪ್ರತಿ ವರ್ಷದ ವಿದ್ಯಾರ್ಥಿ ಗಳಿಸಿದ ಪ್ರಗತಿ Subsequent Progress of the student in school every year from the date of admission I","II","III","IV","V","VI","VII","VIII","ಶಾಲೆ ಬಿಟ್ಟಾಗ ಓದುತ್ತಿದ್ದ ತರಗತಿ Class Studying while leaving the school","ಶಾಲೆ ಬಿಟ್ಟ ತಾರೀಖು Date of Leaving the School","ಶಾಲೆಯನ್ನು ಬಿಡಲು ಕಾರಣ Reason for Leaving The school","ಕೋಟ್ಟ ವರ್ಗಾವಣೆ ಪತ್ರದ ಸಂಖ್ಯೆ ಮತ್ತು ದಿನಾಂಕ No. and Date of TC Issued","ಮುಖ್ಯಸ್ಥರ ಸಹಿ ಮತ್ತು ಮುದ್ರೆ Signature and seal of the Head","ಷರಾ Remarks"]; // Your desired labels
     var detailHtml = "";
     for (var i = 0; i < row.length; i++) {
         detailHtml += "<p><strong>" + labels[i] + ":</strong> " + row[i] + "</p>";
@@ -450,3 +435,4 @@ function toggleSidebar() {
 </script>
 </body>
 </html>
+
