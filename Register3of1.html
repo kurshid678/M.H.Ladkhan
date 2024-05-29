@@ -389,9 +389,8 @@ function toggleHoldDetailView() {
 }
 
 
-
 document.getElementById("searchInput").addEventListener("keyup", function() {
-    var input, filter, table, tr, td, i, j, txtValue;
+  ‌  var input, filter, table, tr, td, i, j, txtValue;
     input = document.getElementById("searchInput");
     filter = input.value.toUpperCase();
     table = document.getElementsByTagName("table")[0];
@@ -422,6 +421,7 @@ document.getElementById("searchInput").addEventListener("keyup", function() {
         }
     }
 });
+
 
 function toggleHoldDetailView() {
     var detailView = document.getElementById("detailView");
