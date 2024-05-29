@@ -397,12 +397,12 @@ document.getElementById("searchInput").addEventListener("keyup", function() {
     table = document.getElementsByTagName("table")[0];
     tr = table.getElementsByTagName("tr");
     
-    // Remove highlight class from all cells in the third column
-    var allThirdColumnCells = document.querySelectorAll("td:nth-child(3)");
-    allThirdColumnCells.forEach(function(cell) {
-        cell.classList.remove("highlight");
-    });
-    
+    // Remove highlight class from all cells
+    var allCells = table.getElementsByTagName("td");
+    for (i = 0; i < allCells.length; i++) {
+        allCells[i].classList.remove("highlight");
+    }
+
     // If search input is empty, display all rows; otherwise, perform search and highlight matching cells
     if (filter.trim() === "") {
         for (i = 1; i < tr.length; i++) {
@@ -410,14 +410,22 @@ document.getElementById("searchInput").addEventListener("keyup", function() {
         }
     } else {
         for (i = 1; i < tr.length; i++) {
-            tr[i].style.display = "none";
-            td = tr[i].getElementsByTagName("td")[2]; // Search only in the third column (index 2)
-            if (td) {
-                txtValue = td.textContent || td.innerText;
-                if (txtValue.toUpperCase().indexOf(filter) > -1) {
-                    tr[i].style.display = "";
-                    td.classList.add("highlight"); // Add highlight class to matching cells in the third column
+            tr[i].style.display = "none"; // Hide the row initially
+            var rowContainsMatch = false; // Flag to indicate if the row has any matching cell
+
+            td = tr[i].getElementsByTagName("td");
+            for (j = 0; j < td.length; j++) {
+                if (td[j]) {
+                    txtValue = td[j].textContent || td[j].innerText;
+                    if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                        td[j].classList.add("highlight"); // Add highlight class to matching cell
+                        rowContainsMatch = true; // Set flag if a match is found
+                    }
                 }
+            }
+            
+            if (rowContainsMatch) {
+                tr[i].style.display = ""; // Show the row if any cell matches
             }
         }
     }
