@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,height=viewport-height, initial-scale=1.0">
+    <title>Lc</title>
+    
+    <style>
+        body{
+       width: 100vw;
+       height: 150vh;
+       background-color: #eee ;
+       justify-items: center;
+       display: flex;
+       align-items: center;
+       
+        }
+        h1 {
+        font-size: medium;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+        }
+        h2 {
+        font-size: 20px;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+
+        }
+        .fom{
+         background-color: black;
+         height: 100%;
+         border: 1px solid white;
+         color: #eee;
+         display: flex;
+         flex-direction: column;
+         align-items: center;
+        }
+        .fom2{
+         border: 1px solid white;
+         height: 100%;
+         background-color:#eee;
+         justify-items: center;
+         justify-content: center;
+         display: flex;
+         margin-top: 30px;
+        }
+       .Lcc {
+       background-color: rgb(255, 255, 255);
+       display: grid;
+       grid-template-rows: 50% 50%;
+       width: 100vw;
+       height: 150vh;
+       align-content: center;
+       border: rgb(145, 133, 133) 1px solid;
+       padding-top: 3%;
+       }
+       .btn {
+        width: 100%;
+        background-color: rgb(22, 112, 124);
+        color: #eee;
+        border-radius: 5px;
+        cursor: pointer;
+       }
+       .btn:hover{
+        transform: scale(1.08);
+        color: #eee;
+      }
+      .fom_re{
+        width: 60%;
+        background-color:#eee;
+        justify-content: space-between;
+        align-items: center;
+        justify-content: center;
+        box-shadow: 10px 10px 10px rgba(0,0,0,0.4);
+        display: flex;
+        flex-direction: column;
+       }
+       .fom_be{
+        width: 30%;
+        background-color: rgb(219, 125, 125);
+      
+       
+        box-shadow: -10px 10px 10px rgba(0,0,0,0.4);
+        color: #eee;
+        display: flex;
+        flex-direction: column;
+       }
+    </style>
+</head>
+<body>
+<div class="Lcc">
+ <div class="fom">
+    <h1>First fill and Submit the form</h1>
+    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSelgV7hBsJuycwaoZIFib3Rg5x5sHART9Un8kK5Q-1ClcJ5og/viewform?usp=sf_link" width="100%" height="90%" border-style="1.0"></iframe>
+
+ </div>
+ <div class="fom2">
+ <div class="fom_be"><h1>Genrate Your leaving certificate<br>click here</h1>
+  <button onclick="Refresh()" class="btn"  id="btn">Refresh</button>
+   <a href="Janma-Jati Pramana Patra.html"></a><button class="btn">Kannada Janma-Jati Pramana patra</button></a>
+   <a href="ejp.html"></a><button class="btn">English Janma-Jati Pramana patra</button></a>
+
+</div>
+   <div class="fom_re">
+    <h1>To see the Genrated Certificate click here(ಇಲ್ಲಿ ಕ್ಲಿಕ್ ಮಾಡಿ)</h1>
+    <a href="https://mail.google.com" target="" class="open-gmail-button"><button class="btn1">Open Your Gmail click here</button></a></div>
+  
+
+</div>
+</div>    
+   
+  <script>
+function refreshIframe() {
+   document.getElementById("sheetFrame").src += '';
+}
+</script>
+<script>
+function Refresh(){
+
+
+   location.reload();
+}
+
+
+</script>
+</body>
+</html>
