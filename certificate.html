@@ -277,28 +277,44 @@
             document.getElementById('certificate').style.display = 'block';
         });
 
-        async function downloadPDF() {
-            const { jsPDF } = window.jspdf;
-            const certificate = document.getElementById('certificate');
-            
-            // Ensure certificate is a valid DOM element
-            if (!(certificate instanceof Element)) {
-                console.error('The specified element is not valid.');
-                return;
-            }
+         async function downloadPDF() {
+    const { jsPDF } = window.jspdf;
+    const certificate = document.getElementById('certificate');
 
-            // Use html2canvas to capture the content of the certificate
-            const canvas = await html2canvas(certificate, {backgroundColor: null, scale: 2});
-            const imgData = canvas.toDataURL('image/png');
-            const pdf = new jsPDF();
-            const imgProps = pdf.getImageProperties(imgData);
-            const pdfWidth = pdf.internal.pageSize.getWidth();
-            const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+    // Ensure certificate is a valid DOM element
+    if (!(certificate instanceof Element)) {
+        console.error('The specified element is not valid.');
+        return;
+    }
 
-            // Add the image to the PDF
-            pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
-            pdf.save('certificate.pdf');
-        }
+    // Use html2canvas to capture the content of the certificate
+    const canvas = await html2canvas(certificate, { backgroundColor: null, scale: 2 });
+    const imgData = canvas.toDataURL('image/png');
+    const pdf = new jsPDF();
+    const imgProps = pdf.getImageProperties(imgData);
+    const pdfWidth = pdf.internal.pageSize.getWidth();
+    const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+
+    // Add the image to the PDF
+    pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+
+    // Create a blob from the PDF
+    const pdfBlob = pdf.output('blob');
+
+    // Create a link element and use it to trigger the download
+    const link = document.createElement('a');
+    link.href = URL.createObjectURL(pdfBlob);
+    link.download = 'certificate.pdf';
+
+    // Append the link to the body
+    document.body.appendChild(link);
+
+    // Trigger the download by simulating a click
+    link.click();
+
+    // Remove the link from the document
+    document.body.removeChild(link);
+}
     </script>
 </body>
 </html>
