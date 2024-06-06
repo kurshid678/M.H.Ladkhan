@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Birth/Caste Certificate Generator</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            display: flex;
+            justify-content: center;
+           
+            height: 300vh;
+            margin: 0;
+        }
+
+        .container {
+            background: rgba(0, 0, 0, 0.0);
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            
+            width: 80%;
+            overflow: auto;
+        }
+
+        form {
+            margin-bottom: 20px;
+            background-color: #d49393;
+            box-shadow: 5px 5px 0px rgba(0,0,0,0.2);
+
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: azure;
+        }
+
+        input[type="text"], input[type="date"] {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .certificate {
+            display: none;
+            position: relative;
+            width: 794px; /* A4 width in pixels */
+            height: 1123px; /* A4 height in pixels */
+            background-image: url('ENGLISH BIRTH CERTIFICAtE.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin: 0 auto;
+            margin-top: 20px; /* Adjust as needed */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .certificate-content {
+            
+            display: block;
+            position: relative;
+            width: 794px; /* A4 width in pixels */
+            height: 1123px; /* A4 height in pixels */
+            background-color: rgba(0,0,0,0);
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin: 0 auto;
+            margin-top: 20px; /* Adjust as needed */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            
+        }
+
+        .certificate h2 {
+            margin-bottom: 10px;
+        }
+
+        .certificate h3, .certificate h4 {
+            text-align: center;
+            margin: 5px 0;
+        }
+
+        .certificate p {
+            margin: 10px 0;
+        }
+
+        #certName {
+            position: absolute;
+            top: 26.3%;
+            left: 60%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0);
+            color: #000000;
+            padding: 0px;
+            font-size: 100%;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+
+        #BirthDate {
+            position: absolute;
+            top: 32.5%;
+            left: 72%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0);
+            color: #000000;
+            padding: 0px;
+            font-size: 90%;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+
+        #dateinwords {
+            position: absolute;
+            top: 39%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0);
+            color: #000000;
+            padding: 10px;
+            font-size: 90%;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+
+        #certCaste {
+            position: absolute;
+            top: 45.2%;
+            left: 76%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0);
+            color: #000000;
+            padding: 10px;
+            font-size: 90%;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+
+        #certBirthPlace {
+            position: absolute;
+            top: 52.75%;
+            left: 32%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0);
+            color: #000000;
+            padding: 10px;
+            font-size: 90%;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+
+        #certTaluk {
+            position: absolute;
+            top: 52.75%;
+            left: 58%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0);
+            color: #000000;
+            padding: 10px;
+            font-size: 90%;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+
+        #certDistrict {
+            position: absolute;
+            top: 52.75%;
+            left: 83%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0);
+            color: #000000;
+            padding: 10px;
+            font-size: 90%;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+
+        #certAdmissionNo {
+            position: absolute;
+            top: 61%;
+            left: 32%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0);
+            color: #000000;
+            padding: 10px;
+            font-size: 90%;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+
+        #certDate {
+            position: absolute;
+            top: 70%;
+            left: 25%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0);
+            color: #000000;
+            padding: 10px;
+            font-size: 90%;
+            font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+        }
+    </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Birth/Caste Certificate Generator</h1>
+        <form id="certificateForm">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+            <label for="Birthdate"> Date of Birth:</label>
+            <input type="text" id="Birthdate" name="Birthdate" pattern="\d{1,2}-\d{1,2}-\d{4}" placeholder="dd-mm-yyyy" required>
+            <label for="inwords">Date Of Birth in Words:</label>
+            <input type="text" id="inwords" placeholder="type date of Birth in words" required>
+            <label for="birthPlace">Place of Birth:</label>
+            <input type="text" id="birthPlace" name="birthPlace" required>
+            <label for="taluk">Taluk:</label>
+            <input type="text" id="taluk" name="taluk" required>
+            <label for="district">District:</label>
+            <input type="text" id="district" name="district" required>
+            <label for="caste">Caste:</label>
+            <input type="text" id="caste" name="caste" required>
+            <label for="admissionNo">Admission No:</label>
+            <input type="text" id="admissionNo" name="admissionNo" required>
+            <label for="date">Date:</label>
+            <input type="text" id="date" name="date" pattern="\d{1,2}-\d{1,2}-\d{4}" placeholder="dd-mm-yyyy" required>
+            <button type="submit">Generate Certificate</button>
+        </form>
+        <button type="button" onclick="downloadPDF()">Download PDF</button>
+        <div id="certificate" class="certificate">
+            <div class="certificate-content">
+                <span id="certName"></span>
+                <span id="dateinwords"></span>
+                <span id="BirthDate"></span>
+                <span id="certCaste"></span>
+                <span id="certBirthPlace"></span>
+                <span id="certTaluk"></span>
+                <span id="certDistrict"></span>
+                <span id="certAdmissionNo"></span>
+                <span id="certDate"></span>
+            </div>
+        </div>
+    </div>
+    <script>
+        document.getElementById('certificateForm').addEventListener('submit', function(event) {
+            event.preventDefault();
+            var name = document.getElementById('name').value;
+            var birthDate = document.getElementById('Birthdate').value;
+            var inwords = document.getElementById('inwords').value;
+            var birthPlace = document.getElementById('birthPlace').value;
+            var caste = document.getElementById('caste').value;
+            var taluk = document.getElementById('taluk').value;
+            var district = document.getElementById('district').value;
+            var admissionNo = document.getElementById('admissionNo').value;
+            var date = document.getElementById('date').value;
+
+            document.getElementById('certName').innerText = name;
+            document.getElementById('BirthDate').innerText = birthDate;
+            document.getElementById('dateinwords').innerText = inwords;
+            document.getElementById('certBirthPlace').innerText = birthPlace;
+            document.getElementById('certCaste').innerText = caste;
+            document.getElementById('certTaluk').innerText = taluk;
+            document.getElementById('certDistrict').innerText = district;
+            document.getElementById('certAdmissionNo').innerText = admissionNo;
+            document.getElementById('certDate').innerText = date;
+
+            document.getElementById('certificate').style.display = 'block';
+        });
+
+        async function downloadPDF() {
+            const { jsPDF } = window.jspdf;
+            const certificate = document.getElementById('certificate');
+            
+            // Ensure certificate is a valid DOM element
+            if (!(certificate instanceof Element)) {
+                console.error('The specified element is not valid.');
+                return;
+            }
+
+            // Use html2canvas to capture the content of the certificate
+            const canvas = await html2canvas(certificate, {backgroundColor: null, scale: 2});
+            const imgData = canvas.toDataURL('image/png');
+            const pdf = new jsPDF();
+            const imgProps = pdf.getImageProperties(imgData);
+            const pdfWidth = pdf.internal.pageSize.getWidth();
+            const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+
+            // Add the image to the PDF
+            pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+            pdf.save('certificate.pdf');
+        }
+    </script>
+</body>
+</html>
