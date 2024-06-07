@@ -9,17 +9,20 @@
             font-family: Arial, sans-serif;
             background-color: #f4f4f4;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            height: 230vh;
+            height: 300vh;
             margin: 0;
+            justify-content: space-between;
+            row-gap: 100px;
         }
 
         .container {
             background: rgba(0, 0, 0, 0.0);
             padding: 20px;
             border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
             text-align: center;
             
             width: 80%;
@@ -67,7 +70,7 @@
             position: relative;
             width: 794px; /* A4 width in pixels */
             height: 1123px; /* A4 height in pixels */
-            background-image: url('ENGLISH BIRTH CERTIFICATE.jpg');
+            background-image: url('ENGLISH BIRTH CERTIFICAtE.jpg');
             background-size: cover;
             background-repeat: no-repeat;
             margin: 0 auto;
@@ -210,6 +213,19 @@
             font-size: 90%;
             font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
         }
+        .certcontainer {
+            background-color: #85e0a0;
+            width: 80%;
+            height: 100%;
+            border-radius: 5px;
+            border-style: outset;
+            box-shadow: 10px 2px 10px rgba(0,0,0,0.5);
+           
+            overflow: auto;
+        }
+        #ce{
+            font-size: 10px;
+        }
     </style>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
@@ -239,6 +255,10 @@
             <button type="submit">Generate Certificate</button>
         </form>
         <button type="button" onclick="downloadPDF()">Download PDF</button>
+        
+    </div>
+    <span id="ce">Click Downlod pdf button to download the certificate</span>
+    <div class="certcontainer">
         <div id="certificate" class="certificate">
             <div class="certificate-content">
                 <span id="certName"></span>
@@ -252,7 +272,7 @@
                 <span id="certDate"></span>
             </div>
         </div>
-    </div>
+</div>
     <script>
         document.getElementById('certificateForm').addEventListener('submit', function(event) {
             event.preventDefault();
@@ -304,4 +324,3 @@
     </script>
 </body>
 </html>
-
