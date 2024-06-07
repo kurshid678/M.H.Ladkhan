@@ -11,7 +11,7 @@
             display: flex;
             justify-content: center;
            
-            height: 300vh;
+            height: 200vh;
             margin: 0;
         }
 
@@ -28,8 +28,9 @@
 
         form {
             margin-bottom: 20px;
-            background-color: #d49393;
-            box-shadow: 5px 5px 0px rgba(0,0,0,0.2);
+            background-color: rgb(219,125,125);
+            box-shadow: -8px 10px 10px rgba(7, 7, 7, 0.5),
+            5px 10px 10px rgba(7, 7, 7, 0.5) ;
 
         }
 
@@ -54,6 +55,7 @@
             border: none;
             border-radius: 4px;
             cursor: pointer;
+            box-shadow: -4px 5px 5px rgba(7, 7, 7, 0.5) ;
         }
 
         button:hover {
@@ -65,7 +67,7 @@
             position: relative;
             width: 794px; /* A4 width in pixels */
             height: 1123px; /* A4 height in pixels */
-            background-image: url('ENGLISH BIRTH CERTIFICATE.jpg');
+            background-image: url('ENGLISH BIRTH CERTIFICAtE.jpg');
             background-size: cover;
             background-repeat: no-repeat;
             margin: 0 auto;
@@ -277,44 +279,28 @@
             document.getElementById('certificate').style.display = 'block';
         });
 
-         async function downloadPDF() {
-    const { jsPDF } = window.jspdf;
-    const certificate = document.getElementById('certificate');
+        async function downloadPDF() {
+            const { jsPDF } = window.jspdf;
+            const certificate = document.getElementById('certificate');
+            
+            // Ensure certificate is a valid DOM element
+            if (!(certificate instanceof Element)) {
+                console.error('The specified element is not valid.');
+                return;
+            }
 
-    // Ensure certificate is a valid DOM element
-    if (!(certificate instanceof Element)) {
-        console.error('The specified element is not valid.');
-        return;
-    }
+            // Use html2canvas to capture the content of the certificate
+            const canvas = await html2canvas(certificate, {backgroundColor: null, scale: 2});
+            const imgData = canvas.toDataURL('image/png');
+            const pdf = new jsPDF();
+            const imgProps = pdf.getImageProperties(imgData);
+            const pdfWidth = pdf.internal.pageSize.getWidth();
+            const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
 
-    // Use html2canvas to capture the content of the certificate
-    const canvas = await html2canvas(certificate, { backgroundColor: null, scale: 2 });
-    const imgData = canvas.toDataURL('image/png');
-    const pdf = new jsPDF();
-    const imgProps = pdf.getImageProperties(imgData);
-    const pdfWidth = pdf.internal.pageSize.getWidth();
-    const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
-
-    // Add the image to the PDF
-    pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
-
-    // Create a blob from the PDF
-    const pdfBlob = pdf.output('blob');
-
-    // Create a link element and use it to trigger the download
-    const link = document.createElement('a');
-    link.href = URL.createObjectURL(pdfBlob);
-    link.download = 'certificate.pdf';
-
-    // Append the link to the body
-    document.body.appendChild(link);
-
-    // Trigger the download by simulating a click
-    link.click();
-
-    // Remove the link from the document
-    document.body.removeChild(link);
-}
+            // Add the image to the PDF
+            pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+            pdf.save('certificate.pdf');
+        }
     </script>
 </body>
 </html>
