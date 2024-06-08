@@ -6,6 +6,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   <style>
     /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
@@ -23,6 +25,8 @@
     }
     body{
    background-color: rgb(98, 172, 233);
+   width: 100vw;
+   height: 100vh;
 
     }
     .boot{
@@ -32,10 +36,1115 @@
     .boot:hover{
         transform: scaleX(1.1)
     }
+    .div1{
+      display: block;
+      overflow: auto;
+   }
+   .div2{
+      display: none;
+      overflow: auto;
+
+   }
+   .div3{
+      display: none;
+      overflow: auto;
+
+   }
+   .div4{
+      display: none;
+      overflow: auto;
+
+   }
+   
+
+        .container {
+            background: #eee;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            overflow: auto;
+        }
+
+        form {
+            margin-bottom: 20px;
+            background-color: rgb(219,125,125);
+            box-shadow: -8px 10px 10px rgba(7, 7, 7, 0.5),
+            5px 10px 10px rgba(7, 7, 7, 0.5) ;
+            width: 80%;
+            margin-top: 0%;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: azure;
+        }
+
+        input[type="text"], input[type="date"] {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            box-shadow: -4px 5px 5px rgba(7, 7, 7, 0.5) ;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+        .formK {
+            margin-bottom: 20px;
+            background-color: rgb(219,125,125);
+            box-shadow: -8px 10px 10px rgba(7, 7, 7, 0.5),
+            5px 10px 10px rgba(7, 7, 7, 0.5) ;
+            width: 80%;
+            margin-top: 0%;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: azure;
+        }
+
+        input[type="text"], input[type="date"] {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            box-shadow: -4px 5px 5px rgba(7, 7, 7, 0.5) ;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+
+        .certificate {
+            display: none;
+            position: relative;
+            width: 794px; /* A4 width in pixels */
+            height: 1123px; /* A4 height in pixels */
+            background-image: url('ENGLISH BIRTH CERTIFICATE.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin: 0 auto;
+            margin-top: 20px; /* Adjust as needed */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .certificateK {
+            display: none;
+            position: relative;
+            width: 794px; /* A4 width in pixels */
+            height: 1123px; /* A4 height in pixels */
+            background-image: url('kannada.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin: 0 auto;
+            margin-top: 20px; /* Adjust as needed */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+
+        .certificate-content {
+            
+            display: block;
+            position: relative;
+            width: 794px; /* A4 width in pixels */
+            height: 1123px; /* A4 height in pixels */
+            background-color: rgba(0,0,0,0);
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin: 0 auto;
+            margin-top: 20px; /* Adjust as needed */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            
+        }
+        .certificate-content {
+            
+            display: block;
+            position: relative;
+            width: px; /* A4 width in pixels */
+            height: 1123px; /* A4 height in pixels */
+            background-color: rgba(0,0,0,0);
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin: 0 auto;
+            margin-top: 20px; /* Adjust as needed */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            
+        }
+        .certificate-content1 {
+            
+            display: block;
+            position: relative;
+            width: 794px; /* A4 width in pixels */
+            height: 1123px; /* A4 height in pixels */
+            background-color: rgba(0,0,0,0);
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin: 0 auto;
+            margin-top: 20px; /* Adjust as needed */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            
+        }
+
+        .certificate h2 {
+            margin-bottom: 10px;
+        }
+
+        .certificate h3, .certificate h4 {
+            text-align: center;
+            margin: 5px 0;
+        }
+
+        .certificate p {
+            margin: 10px 0;
+        }
+
+        #certName {
+          font-weight: bold;
+            white-space: nowrap;
+            position: absolute;
+            top: 26.3%;
+            left: 60%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0);
+            color: #000000;
+            padding: 0px;
+            font-size: 100%;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            
+        }
+
+        #BirthDate {
+          font-weight: bold;
+            white-space: nowrap;
+            position: absolute;
+            top: 32.5%;
+            left: 72%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0);
+            color: #000000;
+            padding: 0px;
+            font-size: 90%;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        #dateinwords {
+          font-weight: bold;
+            white-space: nowrap;
+            position: absolute;
+            top: 39%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0);
+            color: #000000;
+            padding: 10px;
+            font-size: 90%;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }    
+
+        #certCaste {
+          font-weight: bold;
+            white-space: nowrap;
+            position: absolute;
+            top: 45.2%;
+            left: 76%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0);
+            color: #000000;
+            padding: 10px;
+            font-size: 90%;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        #certBirthPlace {
+          font-weight: bold;
+          white-space: nowrap;
+            position: absolute;
+            top: 52.75%;
+            left: 32%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0);
+            color: #000000;
+            padding: 10px;
+            font-size: 90%;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        #certTaluk {
+          font-weight: bold;
+          white-space: nowrap;
+            position: absolute;
+            top: 52.75%;
+            left: 58%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0);
+            color: #000000;
+            padding: 10px;
+            font-size: 90%;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        #certDistrict {
+          font-weight: bold;
+          white-space: nowrap;
+            position: absolute;
+            top: 52.75%;
+            left: 83%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0);
+            color: #000000;
+            padding: 10px;
+            font-size: 90%;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        #certAdmissionNo {
+          font-weight: bold;
+          white-space: nowrap;
+            position: absolute;
+            top: 61%;
+            left: 32%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0);
+            color: #000000;
+            padding: 10px;
+            font-size: 90%;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        #certDate {
+          font-weight: bold;
+          white-space: nowrap;
+            position: absolute;
+            top: 70%;
+            left: 25%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0);
+            color: #000000;
+            padding: 10px;
+            font-size: 90%;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        #certName1 {
+          font-weight: bold;
+          white-space: nowrap;
+            white-space: nowrap;
+            position: absolute;
+            top: 17%;
+            left: 59%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0);
+            color: #000000;
+            padding: 0px;
+            font-size: 100%;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        #BirthDate1 {
+          font-weight: bold;
+          white-space: nowrap;
+            position: absolute;
+            top: 37.3%;
+            left: 78%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0);
+            color: #000000;
+            padding: 0px;
+            font-size: 90%;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        #dateinwords1 {
+          font-weight: bold;
+          white-space: nowrap;
+            position: absolute;
+            top: 43.8%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0);
+            color: #000000;
+            padding: 10px;
+            font-size: 90%;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        #certCaste1 {
+          font-weight: bold;
+          white-space: nowrap;
+            position: absolute;
+            top: 37.3%;
+            left: 35%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0);
+            color: #000000;
+            padding: 10px;
+            font-size: 90%;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        #certBirthPlace1 {
+          font-weight: bold;
+          white-space: nowrap;
+            position: absolute;
+            top: 49.75%;
+            left: 32%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0);
+            color: #000000;
+            padding: 10px;
+            font-size: 90%;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        #certTaluk1 {
+          font-weight: bold;
+          white-space: nowrap;
+            position: absolute;
+            top: 49.75%;
+            left: 58%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0);
+            color: #000000;
+            padding: 10px;
+            font-size: 90%;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        #certDistrict1 {
+          font-weight: bold;
+          white-space: nowrap;
+            position: absolute;
+            top: 49.75%;
+            left: 83%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0);
+            color: #000000;
+            padding: 10px;
+            font-size: 90%;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        #certAdmissionNo1 {
+          font-weight: bold;
+          white-space: nowrap;
+            position: absolute;
+            top: 30.6%;
+            left: 60%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0);
+            color: #000000;
+            padding: 10px;
+            font-size: 90%;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        
+        #certplace1 {
+          font-weight: bold;
+          white-space: nowrap;
+            position: absolute;
+            top: 65.4%;
+            left: 23%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0);
+            color: #000000;
+            padding: 10px;
+            font-size: 90%;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        #certDate1 {
+          font-weight: bold;
+          white-space: nowrap;
+            position: absolute;
+            top: 68.7%;
+            left: 23%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0);
+            color: #000000;
+            padding: 10px;
+            font-size: 90%;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        #certclass1 {
+          font-weight: bold;
+          white-space: nowrap;
+            position: absolute;
+            top: 23.5%;
+            left: 44.6%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0);
+            color: #000000;
+            padding: 10px;
+            font-size: 90%;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .certcontainer {
+          
+            background-color: #85e0a0;
+            width: 80%;
+            height: 100%;
+            border-radius: 5px;
+            border-style: inset;
+            box-shadow: 10px 2px 10px rgba(0,0,0,0.5);
+            margin-left: 10%;
+            overflow: auto;
+        }
+        .certcontainer1 {
+            background-color: #85e0a0;
+            width: 80%;
+            height: 100%;
+            border-radius: 5px;
+            border-style: inset;
+            box-shadow: 10px 2px 10px rgba(0,0,0,0.5);
+            margin-left: 10%;
+            overflow: auto;
+        }
+        #ce{
+            font-size: 10px;
+        }
+      .hed{
+        background-color: #000000;
+        width: 100%;
+        height: 8%;
+        position: fixed;
+        top: 0%;
+        z-index: 1001;
+        margin-top: 0%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        
+        border: inset 2px;
+        gap: 1%;
+        overflow: auto;
+
+      }
+      h1{
+        margin-top: 15%;
+      }
+      .bthed{
+        height: 80%;
+        background-color: #0a080a;
+        width: 100%;
+        border: outset 2px #eee;
+       align-items: center;
+       justify-content: center;
+       display: flex;
+      }
+      .sp{
+        font-size: 10px;
+      }
+      .Lcontainer {
+        background: #eee;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            overflow: auto;
+        }
+
+        form {
+            margin-bottom: 20px;
+            background-color: rgb(219,125,125);
+            box-shadow: -8px 10px 10px rgba(7, 7, 7, 0.5),
+            5px 10px 10px rgba(7, 7, 7, 0.5) ;
+
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: azure;
+        }
+
+        input[type="text"], input[type="date"] {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            box-shadow: -4px 5px 5px rgba(7, 7, 7, 0.5) ;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+        .Lcertificate {
+            display: none;
+            position: relative;
+            width: 1020px; /* A4 width in pixels */
+            height: 1680px; /* A4 height in pixels */
+            background-image: url('Leaving.jpg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            margin: 0 auto;
+            margin-top: 20px; /* Adjust as needed */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .Lcertificate-content {
+            
+            display: block;
+            position: relative;
+            width: 1020px; /* A4 width in pixels */
+            height: 1680px; /* A4 height in pixels */
+            background-color: rgba(0,0,0,0);
+            background-size: contain;
+            background-repeat: no-repeat;
+            margin: 0 auto;
+            margin-top: 20px; /* Adjust as needed */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            
+        }
+
+        
+
+        .certificate h2 {
+            margin-bottom: 10px;
+        }
+
+        .certificate h3, .certificate h4 {
+            text-align: center;
+            margin: 5px 0;
+        }
+
+        .certificate p {
+            margin: 10px 0;
+        }
+
+        
+        
+        .Lcertcontainer {
+            background-color: #85e0a0;
+            width: 90%;
+            height: 100%;
+            border-radius: 5px;
+            border-style: outset;
+            box-shadow: 10px 2px 10px rgba(0,0,0,0.5);
+            align-items: center;
+            margin-left: 5%;
+           
+            overflow: auto;
+        }
+        #ce{
+            font-size: 10px;
+        }
+        #CERTA {
+          font-weight: bold;
+    position: absolute;
+    top: 5.4%;
+    left: 89%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#CERTB {
+  font-weight: bold;
+    position: absolute;
+    top: 7.8%;
+    left: 89%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#CERTC {
+  font-weight: bold;
+    position: absolute;
+    top: 12.8%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#CERTD {
+  font-weight: bold;
+    position: absolute;
+    top: 17%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#CERTE {
+  font-weight: bold;
+    position: absolute;
+    top: 19.5%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#CERTF {
+  font-weight: bold;
+    position: absolute;
+    top: 22%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#CERTG {
+  font-weight: bold;
+    position: absolute;
+    top: 26.3%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#CERTH {
+  font-weight: bold;
+    position: absolute;
+    top: 26.3%;
+    left: 60%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#CERTI {
+  font-weight: bold;
+    position: absolute;
+    top: 26.3%;
+    left: 75.8%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#CERTJ {
+  font-weight: bold;
+    position: absolute;
+    top: 29.2%;
+    left: 73%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#CERTK {
+  font-weight: bold;
+    position: absolute;
+    top: 31%;
+    left: 73%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#CERTL {
+  font-weight: bold;
+    position: absolute;
+    top: 35%;
+    left: 28%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#CERTM {
+  font-weight: bold;
+    position: absolute;
+    top: 35%;
+    left: 73%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#CERTN {
+  font-weight: bold;
+    position: absolute;
+    top: 40%;
+    left: 73%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#CERTO {
+  font-weight: bold;
+    position: absolute;
+    top: 46%;
+    left: 73%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#CERTP {
+  font-weight: bold;
+    position: absolute;
+    top: 39.7%;
+    left: 26%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#CERTQ {
+  font-weight: bold;
+    position: absolute;
+    top: 42.5%;
+    left: 26%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#CERTR {
+  font-weight: bold;
+    position: absolute;
+    top: 45.3%;
+    left: 26%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#CERTS {
+  font-weight: bold;
+    position: absolute;
+    top: 48%;
+    left: 26%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#CERTT {
+  font-weight: bold;
+    position: absolute;
+    top: 51.4%;
+    left: 73%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#CERTU {
+  font-weight: bold;
+    position: absolute;
+    top: 56%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#CERTV {
+  font-weight: bold;
+    position: absolute;
+    top: 60%;
+    left: 10%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#CERTW {
+  font-weight: bold;
+    position: absolute;
+    top: 57.4%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#CERTX {
+  font-weight: bold;
+    position: absolute;
+    top: 60.5%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#CERTY {
+  font-weight: bold;
+    position: absolute;
+    top: 64%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#CERTZ {
+  font-weight: bold;
+    position: absolute;
+    top: 68.3%;
+    left: 15%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#CERTA1 {
+  font-weight: bold;
+    position: absolute;
+    top: 68.3%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#CERTB1 {
+  font-weight: bold;
+    position: absolute;
+    top: 73%;
+    left: 15%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#CERTC1 {
+  font-weight: bold;
+    position: absolute;
+    top: 72%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#CERTD1 {
+  font-weight: bold;
+    position: absolute;
+    top: 75.6%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#CERTE1 {
+  font-weight: bold;
+    position: absolute;
+    top: 79%;
+    left: 33%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#CERTF1 {
+  font-weight: bold;
+    position: absolute;
+    top: 79%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#CERTG1 {
+  font-weight: bold;
+    position: absolute;
+    top: 82.5%;
+    left: 33%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#CERTH1 {
+  font-weight: bold;
+    position: absolute;
+    top: 82.5%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#CERTI1 {
+  font-weight: bold;
+    position: absolute;
+    top: 87.3%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#CERTJ1 {
+  font-weight: bold;
+    position: absolute;
+    top: 89.6%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+
   </style>
 </head>
 <body>
-
+ 
+<div id="div1" class="div1">
 <nav class="navbar navbar-inverse visible-xs">
   <div class="container-fluid">
     <div class="navbar-header">
@@ -48,9 +1157,9 @@
     </div>
     <div class="collapse navbar-collapse" id="myNavbar">
       <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Home</a></li>
-        <li><a href="Lc.html">Lc-Genrate</a></li>
-        <li><a href="certificate.html">Janma jati paramana patra</a></li>
+        <li class="active"><a href="">Dashboard</a></li>
+        <li><button onclick="disLc()"  class="bt">Lc Genrate</button></li>
+        <li><button onclick="disE()"  class="bt">Janma jati pramana patra</button></li>
         <li><a href="#">English-Registers</a></li>
       </ul>
     </div>
@@ -62,9 +1171,9 @@
     <div class="col-sm-3 sidenav hidden-xs">
       <h2>M.H.Ladkhan</h2>
       <ul class="nav nav-pills nav-stacked">
-        <li class="active"><a href="#section1">Assalamualyakum</a></li>
-        <li><a href="Lc.html">Lc-Genrate</a></li>
-        <li><a href="certificate.html">Janma jati paramana patra</a></li>
+        <li class="active"> <a href="">Dashboard</a></li>
+        <li><button onclick="disLc()"  class="bt">Lc Genrate</button></li>
+        <li><button onclick="disE()"  class="bt">Janma jati pramana patra</button></li>
         <li><a href="#section3">English-Registers</a></li>
       </ul><br>
     </div>
@@ -116,15 +1225,15 @@
         </div>
         <div class="col-sm-4">
           <div class="well">
-            <li><button class="boot"><a href="Register5.html">Register5</a></button></li> 
+            <li><button class="boot"><a href="register5.html">Register5</a></button></li> 
           </div>
         </div>
       </div>
       <div class="row">
         <div class="col-sm-8">
           <div class="well">
-            <p>The Registers of all the students created by Wahab </p> 
-           <button onclick="openpdf()">All Registers pdf</button>
+            <p>The Registers of all the students </p> 
+            <a href="">Edit Registers</a>
           </div>
         </div>
         <div class="col-sm-4">
@@ -136,12 +1245,508 @@
     </div>
   </div>
 </div>
+</div>
+<div id="div2" class="div2">
+  
+  <div class="container">
+    <header class="hed">
+      <button onclick="dash()" class="bthed">Dashboard</button>
+      <button onclick="disE()" class="bthed"><span class="sp">English-JPP</span></button>
+      <button onclick="disK()" class="bthed"><span class="sp">Kannada-JPP</span></button>
+     
+      
+    </header>
+    <h1>Birth/Caste Certificate Generator</h1>
+    <form id="certificateForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="Birthdate"> Date of Birth:</label>
+        <input type="text" id="Birthdate" name="Birthdate" pattern="\d{1,2}-\d{1,2}-\d{4}" placeholder="dd-mm-yyyy" required>
+        <label for="inwords">Date Of Birth in Words:</label>
+        <input type="text" id="inwords" placeholder="type date of Birth in words" required>
+        <label for="birthPlace">Place of Birth:</label>
+        <input type="text" id="birthPlace" name="birthPlace" required>
+        <label for="taluk">Taluk:</label>
+        <input type="text" id="taluk" name="taluk" required>
+        <label for="district">District:</label>
+        <input type="text" id="district" name="district" required>
+        <label for="caste">Caste:</label>
+        <input type="text" id="caste" name="caste" required>
+        <label for="admissionNo">Admission No:</label>
+        <input type="text" id="admissionNo" name="admissionNo" required>
+        <label for="date">Date:</label>
+        <input type="text" id="date" name="date" pattern="\d{1,2}-\d{1,2}-\d{4}" placeholder="dd-mm-yyyy" required>
+        <button type="submit">Generate Certificate</button>
+    </form>
+    <button type="button" onclick="downloadPDF()">Download PDF</button>
+    
+</div>
+<span id="ce">Click Downlod pdf button to download the certificate</span>
+<div class="certcontainer">
+    <div id="certificate" class="certificate">
+        <div class="certificate-content">
+            <span id="certName"></span>
+            <span id="dateinwords"></span>
+            <span id="BirthDate"></span>
+            <span id="certCaste"></span>
+            <span id="certBirthPlace"></span>
+            <span id="certTaluk"></span>
+            <span id="certDistrict"></span>
+            <span id="certAdmissionNo"></span>
+            <span id="certDate"></span>
+        </div>
+    </div>
+</div>
+
+
+
+
+</div>
+<div id="div3" class="div3">
+
+  <div class="container">
+  <header class="hed">
+    <button onclick="dash()" class="bthed">Dashboard</button>
+    <button onclick="disE()" class="bthed"><span class="sp">English-JPP</span></button>
+    <button onclick="disK()" class="bthed"><span class="sp">Kannada-JPP</span></button>
+   
+    
+  </header>
+  <h1>Birth/Caste Certificate Generator</h1>
+  <form id="certificateFormK">
+      <label for="name">ಹೆಸರು:</label>
+      <input type="text" id="name1" name="name" required>
+      <label for="class">ವರ್ಗ:</label>
+      <input type="text" id="class1" name="class" required>
+      <label for="Birthdate"> ಜನ್ಮ ದಿನಾಂಕ:</label>
+      <input type="text" id="Birthdate1" name="Birthdate" pattern="\d{1,2}-\d{1,2}-\d{4}" placeholder="dd-mm-yyyy" required>
+      <label for="inwords">ಜನ್ಮ ದಿನಾಂಕ ಅಕ್ಷರದಲ್ಲಿ:</label>
+      <input type="text" id="inwords1" placeholder="type date of Birth in words" required>
+      <label for="birthPlace">ಜನ್ಮ ಸ್ಥಳ:</label>
+      <input type="text" id="birthPlace1" name="birthPlace" required>
+      <label for="taluk">ತಾಲೂಕ:</label>
+      <input type="text" id="taluk1" name="taluk" required>
+      <label for="district">ಜಿಲ್ಲೆ:</label>
+      <input type="text" id="district1" name="district" required>
+      <label for="caste">ಜಾತಿ:</label>
+      <input type="text" id="caste1" name="caste" required>
+      <label for="admissionNo">ಅಡಮಿಸ್ಸನ ನಂ:</label>
+      <input type="text" id="admissionNo1" name="admissionNo" required>
+      <label for="date">ಸ್ಥಳ:</label>
+      <input type="text" id="place1" name="place" >
+      <label for="date">ದಿನಾಂಕ:</label>
+      <input type="text" id="date1" name="date" pattern="\d{1,2}-\d{1,2}-\d{4}" placeholder="dd-mm-yyyy" required>
+      <button type="submit">Generate Certificate</button>
+  </form>
+  <button type="button" onclick="downloadPDFK()">Download PDF</button>
+  
+</div>
+<span id="ce">Click Downlod pdf button to download the certificate</span>
+<div class="certcontainer1">
+  <div id="certificateK" class="certificateK">
+      <div class="certificate-content1">
+          <span id="certName1">name</span>
+          <span id="dateinwords1">words</span>
+          <span id="BirthDate1">dateofbirth</span>
+          <span id="certCaste1">caste</span>
+          <span id="certBirthPlace1">Placeofbirth</span>
+          <span id="certTaluk1">taluk</span>
+          <span id="certDistrict1">jilla</span>
+          <span id="certAdmissionNo1">admissonno</span>
+          <span id="certDate1">date</span>
+          <span id="certplace1">place</span>
+          <span id="certclass1">class</span>
+      </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+</div>
+<div class="div4" id="div4">
+  <div class="Lcontainer">
+    <header class="hed">
+      <button onclick="dash()" class="bthed">Dashboard</button>
+      <button onclick="disLc()" class="bthed"><span class="sp">Kannada-Lc</span></button>
+      <button onclick="disLc()" class="bthed"><span class="sp">English-Lc</span></button>
+     
+      
+    </header>
+    <h1>Birth/Caste Certificate Generator</h1>
+    <form id="LcertificateForm">
+        <label for="A">ಸಂಖ್ಯೆ:</label>
+        <input type="text" id="A" name="A" required>
+        <label for="B"> ದಿನಾಂಕ:</label>
+        <input type="text" id="B" name="B"  required>
+        <label for="C">ಎಸ್.ಟಿ.ಎಸ್.ನಂ:</label>
+        <input type="text" id="C" placeholder="" required>
+        <label for="D">ಪ್ರವೇಶ ಸಂಖ್ಯೆ:</label>
+        <input type="text" id="D" name="D" required>
+        <label for="E">ಆಧಾರ ಸಂಖ್ಯೆ:</label>
+        <input type="text" id="E" name="E" required>
+        <label for="F">ಪೂರ್ಣ ಹೆಸರು:</label>
+        <input type="text" id="F" name="F" required>
+        <label for="G">ಲಿಂಗ:</label>
+        <input type="text" id="G" name="G" required>
+        <label for="H">ಧರ್ಮ:</label>
+        <input type="text" id="H" name="H" required>
+        <label for="I">ಜಾತಿ:</label>
+        <input type="text" id="I" name="I"  required>
+        <label for="J">ತಾಯಿ ಹೆಸರು:</label>
+        <input type="text" id="J" name="J" required>
+        <label for="K">ತಂದೆ ಹೆಸರು:</label>
+        <input type="text" id="K" name="K" required>
+        <label for="L">ವಿದ್ಯಾರ್ಥಿಯು ಪರಿಶಿಷ್ಟ ಜಾತಿ ಅಥವಾ
+            ಪರಿಶಿಷ್ಟ ವರ್ಗಕ್ಕೆ ಸೇರಿದವನಾಗಿದ್ದಾನೆಯೇ?:</label>
+        <input type="text" id="L" name="L" required>
+        <label for="M">ಮುಂದಿನ ತರಗತಿಗೆ ಉತ್ತೀರ್ಣ ಗೊಳಿಸಲು ಅರ್ಹನಾಗಿದ್ದಾನೆಯೇ:</label>
+        <input type="text" id="M" name="M" required>
+        <label for="N">ಜನ್ಮ ದಿನಾಂಕ:</label>
+        <input type="text" id="N" name="N" required>
+        <label for="O">ಜನ್ಮ ದಿನಾಂಕ (ಅಕ್ಷರದಲ್ಲಿ):</label>
+        <input type="text" id="O" name="O" required>
+        <label for="P">ಜನ್ಮ ಸ್ಥಳ:</label>
+        <input type="text" id="P" name="P" required>
+        <label for="Q">ತಾಲೂಕ:</label>
+        <input type="text" id="Q" name="Q" required>
+        <label for="R">ಜಿಲ್ಲೆ:</label>
+        <input type="text" id="R" name="R" required>
+        <label for="S">ರಾಜ್ಯ:</label>
+        <input type="text" id="S" name="S" required>
+        <label for="T">ಶಾಲೆಯನ್ನು ಬಿಡುವಾಗ ವಿದ್ಯಾರ್ಥಿಯು ಓದುತ್ತಿದ್ದ ದರ್ಜೆ ತರಗತಿ (ಅಕ್ಷರದಲ್ಲಿ):</label>
+        <input type="text" id="T" name="T" required>
+        <label for="U">ಎ-ಅಧ್ಯಯನ ಮಾಡಿದ ಭಾಷೆ:</label>
+        <input type="text" id="U" name="U" required>
+        <label for="V">ಅಧ್ಯಯನ ಮಾಡಿದ
+            ಐಚ್ಛಿಕ ವಿಷಯಗಳು:</label>
+        <input type="text" id="V" name="V" required>
+        <label for="W">ಭೋದನಾ ಮಾಧ್ಯಮ:</label>
+        <input type="text" id="W" name="W" required>
+        <label for="X">ಆ ವರ್ಗಕ್ಕೆ
+            ತರಗತಿಗೆ ಪ್ರವೇಶ ಪಡೆದ
+            ಅಥವಾ ಬಡ್ತಿ ಪಡೆದ ದಿನಾಂಕ:</label>
+        <input type="text" id="X" name="X" required>
+        <label for="Y">ಶಾಲೆಗೆ ಬಾಕಿಯರುವ ಎಲ್ಲಾ ಶುಲ್ಕುಗಳನ್ನು ವಿದ್ಯಾರ್ಥಿ ಯು ಪಾವತಿ ಮಾಡಿದ್ದಾನೆಯೇ?:</label>
+        <input type="text" id="Y" name="Y" required>
+        <label for="Z">ಶುಲ್ಕ ವಿನಾಯತಿ ಯಾವುದಾದರೂ ಇದ್ದಲ್ಲಿ (ಸ್ವರೂಪ ಮತ್ತು ಅವಧಿಯನ್ನು ನಿರ್ದಿಷ್ಟಪಡಿಸತ್ಕದ್ದು):</label>
+        <input type="text" id="Z" name="Z" required>
+        <label for="A1">ವಿದ್ಯಾರ್ಥಿ ವೇತನ ಯಾವುದಾದರು ಇದ್ದಲ್ಲಿ (ಸ್ವರೂಪ ಹಾಗೂ ಅವಧಿಯನ್ನು ನಿರ್ಧಿಷ್ಟಪಡಿಸತಕ್ಕದ್ದು):</label>
+        <input type="text" id="A1" name="A1" required>
+        <label for="B1">ವೈದ್ಯಕೀಯ ಪರಿಕ್ಷೆ ಮಾಡಲಾಗಿದೆಯೇ ಇಲ್ಲವೇ?:</label>
+        <input type="text" id="B1" name="B1" required>
+        <label for="C1">ಶಾಲೆಗೆ ವಿದ್ಯಾರ್ಥಿಯು ಕಡೆಯ ಬಾರಿ ಹಾಜರಿದ್ದ ದಿನಾಂಕ:</label>
+        <input type="text" id="C1" name="C1" required>
+        <label for="D1">ವರ್ಗಾವಣೆ ಪ್ರಮಾಣ ಪತ್ರಕ್ಕಾಗಿ ಅರ್ಜಿಯನ್ನು ಸ್ವಿಕರಿಸಿದ ದಿನಾಂಕ:</label>
+        <input type="text" id="D1" name="D1" required>
+        <label for="E1">ವರ್ಗಾವಣೆ ಪ್ರಮಾಣ ಪತ್ರ ನೀಡಿಕೆಯ ದಿನಾಂಕ:</label>
+        <input type="text" id="E1" name="E1" required>
+        <label for="F1">ಶಾಲೆ ಬಿಟ್ಟ ದಿನಾಂಕದವರೆಗಿನ ಶಾಲೆಯ ದಿನಗಳ ಸಂಖ್ಯೆ:</label>
+        <input type="text" id="F1" name="F1" required>
+        <label for="G1">ವಿದ್ಯಾರ್ಥಿಯು ಹಾಜರಿದ್ದ ಶಾಲೆಯ ದಿನಗಳ ಸಂಖ್ಯೆ:</label>
+        <input type="text" id="G1" name="G1" required>
+        <label for="H1">ಶೀಲ ಮತ್ತು ಚಾರಿತ್ರ್ಯ:</label>
+        <input type="text" id="H1" name="H1" required>
+        <label for="I1">ಸ್ಥಳ:</label>
+        <input type="text" id="I1" name="I1" required>
+        <label for="J1">ದಿನಾಂಕ:</label>
+        <input type="text" id="J1" name="J1" required>
+        
+        <button type="submit">Generate Certificate</button>
+    </form>
+    <button type="button" onclick="downloadPDF()">Download PDF</button>
+    
+</div>
+
+<div class="Lcertcontainer">
+    <div id="Lcertificate" class="Lcertificate">
+        <div class="Lcertificate-content">
+            <span id="CERTA">1</span>
+            <span id="CERTB">2</span>
+            <span id="CERTC">3</span>
+            <span id="CERTD">4</span>
+            <span id="CERTE">5</span>
+            <span id="CERTF">6</span>
+            <span id="CERTG">7</span>
+            <span id="CERTH">8</span>
+            <span id="CERTI">9</span>
+            <span id="CERTJ">10</span>
+            <span id="CERTK">11</span>
+            <span id="CERTL">12</span>
+            <span id="CERTM">13</span>
+            <span id="CERTN">14</span>
+            <span id="CERTO">15</span>
+            <span id="CERTP">16</span>
+            <span id="CERTQ">17</span>
+            <span id="CERTR">18</span>
+            <span id="CERTS">19</span>
+            <span id="CERTT">20</span>
+            <span id="CERTU">21</span>
+            <span id="CERTV">22</span>
+            <span id="CERTW">23</span>
+            <span id="CERTX">24</span>
+            <span id="CERTY">25</span>
+            <span id="CERTZ">26</span>
+            <span id="CERTA1">27</span>
+            <span id="CERTB1">28</span>
+            <span id="CERTC1">29</span>
+            <span id="CERTD1">30</span>
+            <span id="CERTE1">31</span>
+            <span id="CERTF1">32</span>
+            <span id="CERTG1">33</span>
+            <span id="CERTH1">34</span>
+            <span id="CERTI1">35</span>
+            <span id="CERTJ1">36</span>
+           
+        </div>
+    </div>
+</div>
+
+
+</div>
 <script>
-function openpdf () {
-  window.location.href = "All Registers.pdf";
+function disE() {
+ document.getElementById('div2').style.display = 'block';
+ document.getElementById('div1').style.display = 'none';
+ document.getElementById('div3').style.display = 'none';
+ document.getElementById('div4').style.display = 'none';
+}
+function dash() {
+  document.getElementById('div2').style.display = 'none';
+  document.getElementById('div1').style.display = 'block';
+  document.getElementById('div3').style.display = 'none';
+  document.getElementById('div4').style.display = 'none';
+}
+function disK(){
+  document.getElementById('div2').style.display = 'none';
+  document.getElementById('div1').style.display = 'none';
+  document.getElementById('div3').style.display = 'block';
+  document.getElementById('div4').style.display = 'none';
+
+
+}
+function disLc(){
+  document.getElementById('div2').style.display = 'none';
+  document.getElementById('div1').style.display = 'none';
+  document.getElementById('div3').style.display = 'none';
+  document.getElementById('div4').style.display = 'block';
+}
+</script>
+<script>
+  document.getElementById('certificateForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      var name = document.getElementById('name').value;
+      var birthDate = document.getElementById('Birthdate').value;
+      var inwords = document.getElementById('inwords').value;
+      var birthPlace = document.getElementById('birthPlace').value;
+      var caste = document.getElementById('caste').value;
+      var taluk = document.getElementById('taluk').value;
+      var district = document.getElementById('district').value;
+      var admissionNo = document.getElementById('admissionNo').value;
+      var date = document.getElementById('date').value;
+      
+
+      document.getElementById('certName').innerText = name;
+      document.getElementById('BirthDate').innerText = birthDate;
+      document.getElementById('dateinwords').innerText = inwords;
+      document.getElementById('certBirthPlace').innerText = birthPlace;
+      document.getElementById('certCaste').innerText = caste;
+      document.getElementById('certTaluk').innerText = taluk;
+      document.getElementById('certDistrict').innerText = district;
+      document.getElementById('certAdmissionNo').innerText = admissionNo;
+      document.getElementById('certDate').innerText = date;
+      
+
+      document.getElementById('certificate').style.display = 'block';
+  });
+
+  async function downloadPDF() {
+      const { jsPDF } = window.jspdf;
+      const certificate = document.getElementById('certificate');
+      
+      // Ensure certificate is a valid DOM element
+      if (!(certificate instanceof Element)) {
+          console.error('The specified element is not valid.');
+          return;
+      }
+
+      // Use html2canvas to capture the content of the certificate
+      const canvas = await html2canvas(certificate, {backgroundColor: null, scale: 2});
+      const imgData = canvas.toDataURL('image/png');
+      const pdf = new jsPDF();
+      const imgProps = pdf.getImageProperties(imgData);
+      const pdfWidth = pdf.internal.pageSize.getWidth();
+      const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+
+      // Add the image to the PDF
+      pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+      pdf.save('certificate.pdf');
+  }
+</script>
+<script>
+  document.getElementById('certificateFormK').addEventListener('submit', function(event) {
+      event.preventDefault();
+      var name = document.getElementById('name1').value;
+      var birthDate = document.getElementById('Birthdate1').value;
+      var inwords = document.getElementById('inwords1').value;
+      var birthPlace = document.getElementById('birthPlace1').value;
+      var caste = document.getElementById('caste1').value;
+      var taluk = document.getElementById('taluk1').value;
+      var district = document.getElementById('district1').value;
+      var admissionNo = document.getElementById('admissionNo1').value;
+      var date = document.getElementById('date1').value;
+      var clas = document.getElementById('class1').value;
+      var place = document.getElementById('place1').value;
+
+      document.getElementById('certName1').innerText = name;
+      document.getElementById('BirthDate1').innerText = birthDate;
+      document.getElementById('dateinwords1').innerText = inwords;
+      document.getElementById('certBirthPlace1').innerText = birthPlace;
+      document.getElementById('certCaste1').innerText = caste;
+      document.getElementById('certTaluk1').innerText = taluk;
+      document.getElementById('certDistrict1').innerText = district;
+      document.getElementById('certAdmissionNo1').innerText = admissionNo;
+      document.getElementById('certDate1').innerText = date;
+      document.getElementById('certclass1').innerText = clas;
+      document.getElementById('certplace1').innerText = place;
+     
+
+      document.getElementById('certificateK').style.display = 'block';
+  });
+
+  async function downloadPDFK() {
+      const { jsPDF } = window.jspdf;
+      const certificate = document.getElementById('certificateK');
+      
+      // Ensure certificate is a valid DOM element
+      if (!(certificate instanceof Element)) {
+          console.error('The specified element is not valid.');
+          return;
+      }
+
+      // Use html2canvas to capture the content of the certificate
+      const canvas = await html2canvas(certificate, {backgroundColor: null, scale: 2});
+      const imgData = canvas.toDataURL('image/png');
+      const pdf = new jsPDF();
+      const imgProps = pdf.getImageProperties(imgData);
+      const pdfWidth = pdf.internal.pageSize.getWidth();
+      const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+
+      // Add the image to the PDF
+      pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+      pdf.save('certificate.pdf');
+  }
+</script>
+<script>
+  document.getElementById('LcertificateForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+  var A = document.getElementById('A').value;
+  var B = document.getElementById('B').value;
+  var C = document.getElementById('C').value;
+  var D = document.getElementById('D').value;
+  var E = document.getElementById('E').value;
+  var F = document.getElementById('F').value;
+  var G = document.getElementById('G').value;
+  var H = document.getElementById('H').value;
+  var I = document.getElementById('I').value;
+  var J = document.getElementById('J').value;
+  var K = document.getElementById('K').value;
+  var L = document.getElementById('L').value;
+  var M = document.getElementById('M').value;
+  var N = document.getElementById('N').value;
+  var O = document.getElementById('O').value;
+  var P = document.getElementById('P').value;
+  var Q = document.getElementById('Q').value;
+  var R = document.getElementById('R').value;
+  var S = document.getElementById('S').value;
+  var T = document.getElementById('T').value;
+  var U = document.getElementById('U').value;
+  var V = document.getElementById('V').value;
+  var W = document.getElementById('W').value;
+  var X = document.getElementById('X').value;
+  var Y = document.getElementById('Y').value;
+  var Z = document.getElementById('Z').value;
+  var A1 = document.getElementById('A1').value;
+  var B1 = document.getElementById('B1').value;
+  var C1 = document.getElementById('C1').value;
+  var D1 = document.getElementById('D1').value;
+  var E1 = document.getElementById('E1').value;
+  var F1 = document.getElementById('F1').value;
+  var G1 = document.getElementById('G1').value;
+  var H1 = document.getElementById('H1').value;
+  var I1 = document.getElementById('I1').value;
+  var J1 = document.getElementById('J1').value;
+ 
+
+  document.getElementById('CERTA').innerText = A;
+  document.getElementById('CERTB').innerText = B;
+  document.getElementById('CERTC').innerText = C;
+  document.getElementById('CERTD').innerText = D;
+  document.getElementById('CERTE').innerText = E;
+  document.getElementById('CERTF').innerText = F;
+  document.getElementById('CERTG').innerText = G;
+  document.getElementById('CERTH').innerText = H;
+  document.getElementById('CERTI').innerText = I;
+  document.getElementById('CERTJ').innerText = J;
+  document.getElementById('CERTK').innerText = K;
+  document.getElementById('CERTL').innerText = L;
+  document.getElementById('CERTM').innerText = M;
+  document.getElementById('CERTN').innerText = N;
+  document.getElementById('CERTO').innerText = O;
+  document.getElementById('CERTP').innerText = P;
+  document.getElementById('CERTQ').innerText = Q;
+  document.getElementById('CERTR').innerText = R;
+  document.getElementById('CERTS').innerText = S;
+  document.getElementById('CERTT').innerText = T;
+  document.getElementById('CERTU').innerText = U;
+  document.getElementById('CERTV').innerText = V;
+  document.getElementById('CERTW').innerText = A1;
+  document.getElementById('CERTX').innerText = B1;
+  document.getElementById('CERTY').innerText = C1;
+  document.getElementById('CERTZ').innerText = W;
+  document.getElementById('CERTA1').innerText = D1;
+  document.getElementById('CERTB1').innerText = X;
+  document.getElementById('CERTC1').innerText = E1;
+  document.getElementById('CERTD1').innerText = F1;
+  document.getElementById('CERTE1').innerText = Y;
+  document.getElementById('CERTF1').innerText = G1;
+  document.getElementById('CERTG1').innerText = Z;
+  document.getElementById('CERTH1').innerText = H1;
+  document.getElementById('CERTI1').innerText = I1;
+  document.getElementById('CERTJ1').innerText = J1;
+ 
+
+      document.getElementById('Lcertificate').style.display = 'block';
+  });
+
+  async function downloadPDF() {
+const { jsPDF } = window.jspdf;
+const certificate = document.getElementById('Lcertificate');
+
+// Ensure certificate is a valid DOM element
+if (!(certificate instanceof Element)) {
+  console.error('The specified element is not valid.');
+  return;
 }
 
-  
+// Use html2canvas to capture the content of the certificate
+const canvas = await html2canvas(certificate, {backgroundColor: null, scale: 2});
+const imgData = canvas.toDataURL('Leaving.jpg');
+const pdf = new jsPDF('p', 'in', 'legal'); // Set page size to legal (8.5 x 14 inches)
+const imgProps = pdf.getImageProperties(imgData);
+const pdfWidth = pdf.internal.pageSize.getWidth();
+const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+
+// Add the image to the PDF
+pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+pdf.save('Leaving-Certificate.pdf');
+}
+
 </script>
 </body>
 </html>
