@@ -1978,7 +1978,7 @@
         
         <button type="submit">Generate Certificate</button>
     </form>
-    <button type="button" onclick="downloadPDF()">Download PDF</button>
+    <button type="button" onclick="downloadLKPDF()">Download PDF</button>
     
 </div>
 
@@ -2122,7 +2122,7 @@ all the fees due to the school:</label>
         
         <button type="submit">Generate Certificate</button>
     </form>
-    <button type="button" onclick="downloadPDF()">Download PDF</button>
+    <button type="button" onclick="downloadLEPDF()">Download PDF</button>
     
 </div>
 
@@ -2399,7 +2399,7 @@ function disLE(){
       document.getElementById('Lcertificate').style.display = 'block';
   });
 
-  async function downloadPDF() {
+  async function downloadLKPDF() {
 const { jsPDF } = window.jspdf;
 const certificate = document.getElementById('Lcertificate');
 
@@ -2503,7 +2503,7 @@ pdf.save('Leaving-Certificate.pdf');
       document.getElementById('LEcertificate').style.display = 'block';
   });
 
-  async function downloadPDF() {
+  async function downloadLEPDF() {
 const { jsPDF } = window.jspdf;
 const certificate = document.getElementById('LEcertificate');
 
