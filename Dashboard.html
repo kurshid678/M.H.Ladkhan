@@ -1,0 +1,2480 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>login To M.H.Ladkhan</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <style>
+    /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
+    .row.content {height: 550px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+        
+    /* On small screens, set height to 'auto' for the grid */
+    @media screen and (max-width: 767px) {
+      .row.content {height: auto;} 
+    }
+    body{
+   background-color: rgb(233, 98, 98);
+   width: 100vw;
+   height: 100vh;
+
+    }
+    .boot{
+     background-color: rgb(252, 255, 252);
+     border-radius: 5px;
+    }
+    .boot:hover{
+        transform: scaleX(1.1)
+    }
+    .div1{
+      display: none;
+      overflow: auto;
+   }
+   .div2{
+      display: none;
+      overflow: auto;
+
+   }
+   .div3{
+      display: none;
+      overflow: auto;
+
+   }
+   .div4{
+      display: none;
+      overflow: auto;
+   }
+   .div5{
+      display: block;
+      overflow: auto;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        background-color: rgb(238, 238, 238);
+        margin: 0;
+        padding: 0;
+        
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        width: 100vw;
+
+   }
+   
+
+        .container {
+            background: #eee;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+            overflow: auto;
+        }
+
+        form {
+            margin-bottom: 20px;
+            background-color: rgb(219,125,125);
+            box-shadow: -8px 10px 10px rgba(7, 7, 7, 0.5),
+            5px 10px 10px rgba(7, 7, 7, 0.5) ;
+            width: 80%;
+            margin-top: 0%;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: azure;
+        }
+
+        input[type="text"], input[type="date"] {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            box-shadow: -4px 5px 5px rgba(7, 7, 7, 0.5) ;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+        .formK {
+            margin-bottom: 20px;
+            background-color: rgb(219,125,125);
+            box-shadow: -8px 10px 10px rgba(7, 7, 7, 0.5),
+            5px 10px 10px rgba(7, 7, 7, 0.5) ;
+            width: 80%;
+            margin-top: 0%;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: azure;
+        }
+
+        input[type="text"], input[type="date"] {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            box-shadow: -4px 5px 5px rgba(7, 7, 7, 0.5) ;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+
+
+        .certificate {
+            display: none;
+            position: relative;
+            width: 794px; /* A4 width in pixels */
+            height: 1123px; /* A4 height in pixels */
+            background-image: url('ENGLISH BIRTH CERTIFICATE.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin: 0 auto;
+            margin-top: 20px; /* Adjust as needed */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .certificateK {
+            display: none;
+            position: relative;
+            width: 794px; /* A4 width in pixels */
+            height: 1123px; /* A4 height in pixels */
+            background-image: url('kannada.jpg');
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin: 0 auto;
+            margin-top: 20px; /* Adjust as needed */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+
+        .certificate-content {
+            
+            display: block;
+            position: relative;
+            width: 794px; /* A4 width in pixels */
+            height: 1123px; /* A4 height in pixels */
+            background-color: rgba(0,0,0,0);
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin: 0 auto;
+            margin-top: 20px; /* Adjust as needed */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            
+        }
+        .certificate-content {
+            
+            display: block;
+            position: relative;
+            width: px; /* A4 width in pixels */
+            height: 1123px; /* A4 height in pixels */
+            background-color: rgba(0,0,0,0);
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin: 0 auto;
+            margin-top: 20px; /* Adjust as needed */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            
+        }
+        .certificate-content1 {
+            
+            display: block;
+            position: relative;
+            width: 794px; /* A4 width in pixels */
+            height: 1123px; /* A4 height in pixels */
+            background-color: rgba(0,0,0,0);
+            background-size: cover;
+            background-repeat: no-repeat;
+            margin: 0 auto;
+            margin-top: 20px; /* Adjust as needed */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            
+        }
+
+        .certificate h2 {
+            margin-bottom: 10px;
+        }
+
+        .certificate h3, .certificate h4 {
+            text-align: center;
+            margin: 5px 0;
+        }
+
+        .certificate p {
+            margin: 10px 0;
+        }
+
+        #certName {
+          font-weight: bold;
+            white-space: nowrap;
+            position: absolute;
+            top: 26.3%;
+            left: 60%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0);
+            color: #000000;
+            padding: 0px;
+            font-size: 100%;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            
+        }
+
+        #BirthDate {
+          font-weight: bold;
+            white-space: nowrap;
+            position: absolute;
+            top: 32.5%;
+            left: 72%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0);
+            color: #000000;
+            padding: 0px;
+            font-size: 90%;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        #dateinwords {
+          font-weight: bold;
+            white-space: nowrap;
+            position: absolute;
+            top: 39%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0);
+            color: #000000;
+            padding: 10px;
+            font-size: 90%;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }    
+
+        #certCaste {
+          font-weight: bold;
+            white-space: nowrap;
+            position: absolute;
+            top: 45.2%;
+            left: 76%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0);
+            color: #000000;
+            padding: 10px;
+            font-size: 90%;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        #certBirthPlace {
+          font-weight: bold;
+          white-space: nowrap;
+            position: absolute;
+            top: 52.75%;
+            left: 32%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0);
+            color: #000000;
+            padding: 10px;
+            font-size: 90%;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        #certTaluk {
+          font-weight: bold;
+          white-space: nowrap;
+            position: absolute;
+            top: 52.75%;
+            left: 58%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0);
+            color: #000000;
+            padding: 10px;
+            font-size: 90%;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        #certDistrict {
+          font-weight: bold;
+          white-space: nowrap;
+            position: absolute;
+            top: 52.75%;
+            left: 83%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0);
+            color: #000000;
+            padding: 10px;
+            font-size: 90%;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        #certAdmissionNo {
+          font-weight: bold;
+          white-space: nowrap;
+            position: absolute;
+            top: 61%;
+            left: 32%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0);
+            color: #000000;
+            padding: 10px;
+            font-size: 90%;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        #certDate {
+          font-weight: bold;
+          white-space: nowrap;
+            position: absolute;
+            top: 70%;
+            left: 25%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0);
+            color: #000000;
+            padding: 10px;
+            font-size: 90%;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        #certName1 {
+          font-weight: bold;
+          white-space: nowrap;
+            white-space: nowrap;
+            position: absolute;
+            top: 17%;
+            left: 59%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0);
+            color: #000000;
+            padding: 0px;
+            font-size: 100%;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        #BirthDate1 {
+          font-weight: bold;
+          white-space: nowrap;
+            position: absolute;
+            top: 37.3%;
+            left: 78%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0);
+            color: #000000;
+            padding: 0px;
+            font-size: 90%;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        #dateinwords1 {
+          font-weight: bold;
+          white-space: nowrap;
+            position: absolute;
+            top: 43.8%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0);
+            color: #000000;
+            padding: 10px;
+            font-size: 90%;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        #certCaste1 {
+          font-weight: bold;
+          white-space: nowrap;
+            position: absolute;
+            top: 37.3%;
+            left: 35%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0);
+            color: #000000;
+            padding: 10px;
+            font-size: 90%;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        #certBirthPlace1 {
+          font-weight: bold;
+          white-space: nowrap;
+            position: absolute;
+            top: 49.75%;
+            left: 32%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0);
+            color: #000000;
+            padding: 10px;
+            font-size: 90%;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        #certTaluk1 {
+          font-weight: bold;
+          white-space: nowrap;
+            position: absolute;
+            top: 49.75%;
+            left: 58%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0);
+            color: #000000;
+            padding: 10px;
+            font-size: 90%;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        #certDistrict1 {
+          font-weight: bold;
+          white-space: nowrap;
+            position: absolute;
+            top: 49.75%;
+            left: 83%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0);
+            color: #000000;
+            padding: 10px;
+            font-size: 90%;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        #certAdmissionNo1 {
+          font-weight: bold;
+          white-space: nowrap;
+            position: absolute;
+            top: 30.6%;
+            left: 60%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0);
+            color: #000000;
+            padding: 10px;
+            font-size: 90%;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        
+        #certplace1 {
+          font-weight: bold;
+          white-space: nowrap;
+            position: absolute;
+            top: 65.4%;
+            left: 23%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0);
+            color: #000000;
+            padding: 10px;
+            font-size: 90%;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        #certDate1 {
+          font-weight: bold;
+          white-space: nowrap;
+            position: absolute;
+            top: 68.7%;
+            left: 23%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0);
+            color: #000000;
+            padding: 10px;
+            font-size: 90%;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        #certclass1 {
+          font-weight: bold;
+          white-space: nowrap;
+            position: absolute;
+            top: 23.5%;
+            left: 44.6%;
+            transform: translate(-50%, -50%);
+            background-color: rgba(255, 255, 255, 0);
+            color: #000000;
+            padding: 10px;
+            font-size: 90%;
+            font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .certcontainer {
+          
+            background-color: #85e0a0;
+            width: 80%;
+            height: 100%;
+            border-radius: 5px;
+            border-style: inset;
+            box-shadow: 10px 2px 10px rgba(0,0,0,0.5);
+            margin-left: 10%;
+            overflow: auto;
+        }
+        .certcontainer1 {
+            background-color: #85e0a0;
+            width: 80%;
+            height: 100%;
+            border-radius: 5px;
+            border-style: inset;
+            box-shadow: 10px 2px 10px rgba(0,0,0,0.5);
+            margin-left: 10%;
+            overflow: auto;
+        }
+        #ce{
+            font-size: 10px;
+        }
+      .hed{
+        background-color: #000000;
+        width: 100%;
+        height: 8%;
+        position: fixed;
+        top: 0%;
+        z-index: 1001;
+         
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        
+        border: inset 2px;
+        gap: 1%;
+        overflow: auto;
+
+      }
+      h1{
+        margin-top: 15%;
+      }
+      .bthed{
+        height: 80%;
+        background-color: #0a080a;
+        width: 100%;
+        border: outset 2px #eee;
+       align-items: center;
+       justify-content: center;
+       display: flex;
+      }
+      .sp{
+        font-size: 10px;
+      }
+      
+      .LEcontainer {
+            background: rgba(0, 0, 0, 0.0);
+            padding: 0px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+            text-align: center;
+            height: 100%;
+            width: 100%;
+            overflow: auto;
+            row-gap: 10%;
+        }
+
+        form {
+            margin-bottom: 20px;
+            background-color: rgb(219,125,125);
+            box-shadow: -8px 10px 10px rgba(7, 7, 7, 0.5),
+            5px 10px 10px rgba(7, 7, 7, 0.5) ;
+
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            color: azure;
+        }
+
+        input[type="text"], input[type="date"] {
+            width: 80%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            
+        }
+
+        button {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            box-shadow: -4px 5px 5px rgba(7, 7, 7, 0.5) ;
+        }
+
+        button:hover {
+            background-color: #218838;
+        }
+        #search-bar {
+            width: 30%;
+            padding: 10px;
+            margin: 20px 0;
+            margin-top: 17%;
+        }
+
+        #search-btn {
+            padding: 10px 20px;
+            cursor: pointer;
+
+        }
+
+        .LEcertificate {
+            display: block;
+            position: relative;
+            width: 1020px; /* A4 width in pixels */
+            height: 1680px; /* A4 height in pixels */
+            background-image: url('Leaving.jpg');
+            background-size: contain;
+            background-repeat: no-repeat;
+            
+            margin: 0 auto;
+            margin-top: 20px; /* Adjust as needed */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .LEcertificate-content {
+            
+            display: block;
+            position: relative;
+            width: 1020px; /* A4 width in pixels */
+            height: 1680px; /* A4 height in pixels */
+            background-color: rgba(0,0,0,0);
+            background-size: contain;
+            background-repeat: no-repeat;
+            margin: 0 auto;
+            margin-top: 20px; /* Adjust as needed */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            
+        }
+
+        .certificate h2 {
+            margin-bottom: 10px;
+        }
+
+        .certificate h3, .certificate h4 {
+            text-align: center;
+            margin: 5px 0;
+        }
+
+        .certificate p {
+            margin: 10px 0;
+        }
+
+        
+        
+        .LEcertcontainer {
+            background-color: #85e0a0;
+            width: 100%;
+            height: 100%;
+            border-radius: 5px;
+            border-style: outset;
+            box-shadow: 10px 2px 10px rgba(0,0,0,0.5);
+            margin-left: 0%;
+            overflow: auto;
+            margin-top: 1%;
+        }
+        #ce{
+            font-size: 10px;
+        }
+        #LECERTA {
+            width: 14%;
+    text-align: center;
+    position: absolute;
+    border-color: rgba(0,0,0,0.0);
+    top: 5.4%;
+    left: 89%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+   
+}
+
+#LECERTB {
+  border-color: rgba(0,0,0,0.0);
+    width: 14%;
+    text-align: center;
+    position: absolute;
+    top: 7.8%;
+    left: 89%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#LECERTC {
+  border-color: rgba(0,0,0,0.0);
+    width: 16%;
+    text-align: center;
+    position: absolute;
+    top: 12.6%;
+    left: 70%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#LECERTD {
+  border-color: rgba(0,0,0,0.0);
+    width: 40%;
+    text-align: center;
+    position: absolute;
+    top: 17%;
+    left: 73.5%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#LECERTE {
+  border-color: rgba(0,0,0,0.0);
+    width: 40%;
+    text-align: center;
+    position: absolute;
+    top: 19.5%;
+    left: 73.5%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#LECERTF {
+  border-color: rgba(0,0,0,0.0);
+    width: 40%;
+    text-align: center;
+    position: absolute;
+    top: 22%;
+    left: 73.5%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#LECERTG {
+  border-color: rgba(0,0,0,0.0);
+    width: 12%;
+    text-align: center;
+    position: absolute;
+    top: 26.3%;
+    left: 12%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#LECERTH {
+  border-color: rgba(0,0,0,0.0);
+    width: 15%;
+    text-align: center;
+    position: absolute;
+    top: 26.3%;
+    left: 62%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#LECERTI {
+  border-color: rgba(0,0,0,0.0);
+    width: 15%;
+    text-align: center;
+    position: absolute;
+    top: 26.3%;
+    left: 79%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#LECERTJ {
+  border-color: rgba(0,0,0,0.0);
+    width: 40%;
+    text-align: center;
+    position: absolute;
+    top: 29.3%;
+    left: 73.5%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#LECERTK {
+  border-color: rgba(0,0,0,0.0);
+    width: 40%;
+    text-align: center;
+    position: absolute;
+    top: 31.3%;
+    left: 73.5%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#LECERTL {
+  border-color: rgba(0,0,0,0.0);
+    width: 15%;
+    text-align: center;
+    position: absolute;
+    top: 34.8%;
+    left: 32%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#LECERTM {
+  border-color: rgba(0,0,0,0.0);
+    width: 15%;
+    text-align: center;
+    position: absolute;
+    top: 34.9%;
+    left: 79%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#LECERTN {
+  border-color: rgba(0,0,0,0.0);
+    width: 40%;
+    text-align: center;
+    position: absolute;
+    top: 40%;
+    left: 73.5%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#LECERTO {
+  border-color: rgba(0,0,0,0.0);
+    width: 40%;
+    text-align: center;
+    position: absolute;
+    top: 46%;
+    left: 73.5%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#LECERTP {
+  border-color: rgba(0,0,0,0.0);
+    width: 20%;
+    text-align: center;
+    position: absolute;
+    top: 39.7%;
+    left: 29%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#LECERTQ {
+  border-color: rgba(0,0,0,0.0);
+    width: 20%;
+    text-align: center;
+    position: absolute;
+    top: 42.5%;
+    left: 29%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#LECERTR {
+  border-color: rgba(0,0,0,0.0);
+    width: 20%;
+    text-align: center;
+    position: absolute;
+    top: 45.3%;
+    left: 29%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#LECERTS {
+  border-color: rgba(0,0,0,0.0);
+    width: 20%;
+    text-align: center;
+    position: absolute;
+    top: 48%;
+    left: 29%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#LECERTT {
+  border-color: rgba(0,0,0,0.0);
+    width: 40%;
+    text-align: center;
+    position: absolute;
+    top: 51.4%;
+    left: 73.5%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#LECERTU {
+  border-color: rgba(0,0,0,0.0);
+    width: 20%;
+    text-align: center;
+    width: 15%;
+    text-align: center;
+    position: absolute;
+    top: 56%;
+    left: 40%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#LECERTV {
+  border-color: rgba(0,0,0,0.0);
+    width: 40%;
+    text-align: center;
+    position: absolute;
+    top: 60%;
+    left: 30%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#LECERTW {
+  border-color: rgba(0,0,0,0.0);
+
+    width: 40%;
+    text-align: center;
+    position: absolute;
+    top: 57.6%;
+    left: 73.5%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#LECERTX {
+  border-color: rgba(0,0,0,0.0);
+
+    width: 40%;
+    text-align: center;
+    position: absolute;
+    top: 60.6%;
+    left: 73.5%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#LECERTY {
+  border-color: rgba(0,0,0,0.0);
+
+    width: 40%;
+    text-align: center;
+    position: absolute;
+    top: 64%;
+    left: 73.5%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#LECERTZ {
+  border-color: rgba(0,0,0,0.0);
+
+    width: 20%;
+    text-align: center;
+    position: absolute;
+    top: 68.3%;
+    left: 20%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+#LECERTA1 {
+  border-color: rgba(0,0,0,0.0);
+
+    width: 40%;
+    text-align: center;
+    position: absolute;
+    top: 68.3%;
+    left: 73.5%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#LECERTB1 {
+  border-color: rgba(0,0,0,0.0);
+
+    width: 40%;
+    text-align: center;
+    position: absolute;
+    top: 73%;
+    left: 29%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#LECERTC1 {
+  border-color: rgba(0,0,0,0.0);
+
+    width: 40%;
+    text-align: center;
+    position: absolute;
+    top: 72%;
+    left: 73.5%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#LECERTD1 {
+  border-color: rgba(0,0,0,0.0);
+
+    width: 40%;
+    text-align: center;
+    position: absolute;
+    top: 75.6%;
+    left: 73.5%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#LECERTE1 {
+  border-color: rgba(0,0,0,0.0);
+
+    width: 20%;
+    text-align: center;
+    position: absolute;
+    top: 79%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#LECERTF1 {
+  border-color: rgba(0,0,0,0.0);
+
+    width: 40%;
+    text-align: center;
+    position: absolute;
+    top: 79%;
+    left: 73.5%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#LECERTG1 {
+  border-color: rgba(0,0,0,0.0);
+
+    width: 20%;
+    text-align: center;
+    position: absolute;
+    top: 82.5%;
+    left: 33%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#LECERTH1 {
+  border-color: rgba(0,0,0,0.0);
+
+    width: 40%;
+    text-align: center;
+    position: absolute;
+    top: 82.5%;
+    left: 73.5%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#LECERTI1 {
+  border-color: rgba(0,0,0,0.0);
+
+    width: 16%;
+    text-align: center;
+    position: absolute;
+    top: 87.3%;
+    left: 20.5%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#LECERTJ1 {
+
+  border-color: rgba(0,0,0,0.0);
+
+    width: 16%;
+    text-align: center;
+    position: absolute;
+    top: 89.6%;
+    left: 20.5%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(255, 255, 255, 0);
+    color: #000000;
+    padding: 0px;
+    font-size: 100%;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.butta{
+
+    margin-top: 10px;
+}
+select {
+    -webkit-appearance: none;  /* For Safari and Chrome */
+    -moz-appearance: none;     /* For Firefox */
+    appearance: none;          /* Standard syntax */
+    border: 1px solid #ccc;    /* Add border for styling */
+    padding: 5px 10px;         /* Add padding for better appearance */
+    background-color: white;   /* Background color */
+    background-image: none; 
+    text-align-last: center;   /* Remove any background image */
+  }
+
+  /* Optional: Style the select box to look like a text box */
+  select::-ms-expand {
+    display: none;  /* For Internet Explorer and Edge */
+  }
+  .Detailveiw {
+            background: #fff;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+
+        }
+
+        .Detailveiw label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .Detailveiw input[type="text"] {
+            width: calc(100% - 10px);
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        .Detailveiw input[type="text"]:readonly {
+            background-color: #e9ecef;
+        }
+
+        .Detailveiw h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+ 
+#dola{
+  display: none;
+  width: 80vw;
+  height: 40vh;
+  resize:horizontal;
+  overflow: auto;
+  margin-left: 8%;
+ }
+ 
+ 
+ .login-container {
+        background: linear-gradient(rgba(255, 255, 255,3),rgb(5, 5, 5));
+        border-radius: 15px;
+        box-shadow: 10px 0px 0px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        text-align: center;
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+        border-top-left-radius: 10%;
+        border-bottom-right-radius: 10%;
+        
+        overflow: auto;
+     }
+
+    .pattern-lock {
+        margin-bottom: 20px;
+
+    }
+
+    .pattern-lock button {
+        width: 40px;
+        height: 40px;
+        border: 1px solid #ccc;
+        background-color: #fff;
+        margin: 5px;
+        font-size: 1.5em;
+        cursor: pointer;
+        border-radius: 50%;
+        transition: background-color 0.3s, transform 0.3s;
+    }
+
+    .pattern-lock button.active {
+        background-color: #0f0f0d;
+    }
+
+    .pattern-lock button:hover {
+        background-color: #f0f0f0;
+        transform: scale(1.3);
+    }
+
+    .message {
+        color: red;
+        font-size: 0.8em;
+        margin-top: 10px;
+    }
+
+    button {
+        padding: 10px 20px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 1em;
+        transition: background-color 0.3s;
+    }
+
+    button:hover {
+        background-color: #45a049;
+    }
+    .reset {
+       
+        color: #ffffff;
+        cursor: pointer;
+        transition: color 0.3s;
+        background-color: #ccc;
+        color: black;
+        border-radius: 10%;
+        padding: 0.5%;
+        box-shadow: 3px 0 0 rgba(255,255,255,0.5);
+    }
+
+    .reset:hover {
+        color: #ffffff;
+        background-color: coral;
+    }
+    .reframe{
+    background-color: #f0f0f0;
+    width: 50%;
+    height: 10%;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    }
+  </style>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
+</head>
+<body>
+ 
+<div id="div1" class="div1">
+<nav class="navbar navbar-inverse visible-xs">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>                        
+      </button>
+      <a class="navbar-brand" href="">M.H.Ladkhan</a>
+    </div>
+    <div class="collapse navbar-collapse" id="myNavbar">
+      <ul class="nav navbar-nav">
+        <li class="active"><a href="">Dashboard</a></li>
+        <li><button onclick="disLc()"  class="bt">Lc Genrate</button></li>
+        <li><button onclick="disE()"  class="bt">Janma jati pramana patra</button></li>
+        <li><a href="#">English-Registers</a></li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-3 sidenav hidden-xs">
+      <h2>M.H.Ladkhan</h2>
+      <ul class="nav nav-pills nav-stacked">
+        <li class="active"> <a href="">Dashboard</a></li>
+        <li><button onclick="disLc()"  class="bt">Lc Genrate</button></li>
+        <li><button onclick="disE()"  class="bt">Janma jati pramana patra</button></li>
+        <li><a href="#section3">English-Registers</a></li>
+      </ul><br>
+    </div>
+    <br>
+    
+    <div class="col-sm-9">
+      <div class="well">
+        <h4>Assalamualyakum</h4>
+        <p>GOVT URDU HPS RAMPUR</p>
+      </div>
+      <div class="row">
+        <div class="col-sm-3">
+          <div class="well">
+            <h4>Teachers</h4>
+            <p>5 Teachers</p> 
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="well">
+            <h4>Total Admissions</h4>
+            <p>2065</p> 
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="well">
+            <h4>Sessions</h4>
+            <p>Two Sessions</p> 
+            <p>Morning</p>
+            <p>Afternoon</p>
+          </div>
+        </div>
+        <div class="col-sm-3">
+          <div class="well">
+            <h4>Percentage</h4>
+            <p>80%</p> 
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-4">
+          <div class="well">
+            <li><button class="boot"><a href="Register3of1.html">Register3of1</a></button></li>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="well">
+            <li><button class="boot"><a href="Register4.html">Register4</a></button></li>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="well">
+            <li><button class="boot"><a href="register5.html">Register5</a></button></li> 
+          </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-sm-8">
+          <div class="well">
+            <p>The Registers of all the students </p> 
+            <a href="">Edit Registers</a>
+          </div>
+        </div>
+        <div class="col-sm-4">
+          <div class="well">
+            <li><button onclick="disLogin()">logout</button></li> 
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+<div id="div2" class="div2">
+  
+  <div class="container">
+    <header class="hed">
+      <button onclick="dash()" class="bthed">Dashboard</button>
+      <button onclick="disE()" class="bthed"><span class="sp">English-JPP</span></button>
+      <button onclick="disK()" class="bthed"><span class="sp">Kannada-JPP</span></button>
+     
+      
+    </header>
+    <h1>Birth/Caste Certificate Generator</h1>
+    <form id="certificateForm">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+        <label for="Birthdate"> Date of Birth:</label>
+        <input type="text" id="Birthdate" name="Birthdate" pattern="\d{1,2}-\d{1,2}-\d{4}" placeholder="dd-mm-yyyy" required>
+        <label for="inwords">Date Of Birth in Words:</label>
+        <input type="text" id="inwords" placeholder="type date of Birth in words" required>
+        <label for="birthPlace">Place of Birth:</label>
+        <input type="text" id="birthPlace" name="birthPlace" required>
+        <label for="taluk">Taluk:</label>
+        <input type="text" id="taluk" name="taluk" required>
+        <label for="district">District:</label>
+        <input type="text" id="district" name="district" required>
+        <label for="caste">Caste:</label>
+        <input type="text" id="caste" name="caste" required>
+        <label for="admissionNo">Admission No:</label>
+        <input type="text" id="admissionNo" name="admissionNo" required>
+        <label for="date">Date:</label>
+        <input type="text" id="date" name="date" pattern="\d{1,2}-\d{1,2}-\d{4}" placeholder="dd-mm-yyyy" required>
+        <button type="submit">Generate Certificate</button>
+    </form>
+    <button type="button" onclick="downloadPDF()">Download PDF</button>
+    
+</div>
+<span id="ce">Click Downlod pdf button to download the certificate</span>
+<div class="certcontainer">
+    <div id="certificate" class="certificate">
+        <div class="certificate-content">
+            <span id="certName"></span>
+            <span id="dateinwords"></span>
+            <span id="BirthDate"></span>
+            <span id="certCaste"></span>
+            <span id="certBirthPlace"></span>
+            <span id="certTaluk"></span>
+            <span id="certDistrict"></span>
+            <span id="certAdmissionNo"></span>
+            <span id="certDate"></span>
+        </div>
+    </div>
+</div>
+
+
+
+
+</div>
+<div id="div3" class="div3">
+
+  <div class="container">
+  <header class="hed">
+    <button onclick="dash()" class="bthed">Dashboard</button>
+    <button onclick="disE()" class="bthed"><span class="sp">English-JPP</span></button>
+    <button onclick="disK()" class="bthed"><span class="sp">Kannada-JPP</span></button>
+   
+    
+  </header>
+  <h1>Birth/Caste Certificate Generator</h1>
+  <form id="certificateFormK">
+      <label for="name">ಹೆಸರು:</label>
+      <input type="text" id="name1" name="name" required>
+      <label for="class">ವರ್ಗ:</label>
+      <input type="text" id="class1" name="class" required>
+      <label for="Birthdate"> ಜನ್ಮ ದಿನಾಂಕ:</label>
+      <input type="text" id="Birthdate1" name="Birthdate" pattern="\d{1,2}-\d{1,2}-\d{4}" placeholder="dd-mm-yyyy" required>
+      <label for="inwords">ಜನ್ಮ ದಿನಾಂಕ ಅಕ್ಷರದಲ್ಲಿ:</label>
+      <input type="text" id="inwords1" placeholder="type date of Birth in words" required>
+      <label for="birthPlace">ಜನ್ಮ ಸ್ಥಳ:</label>
+      <input type="text" id="birthPlace1" name="birthPlace" required>
+      <label for="taluk">ತಾಲೂಕ:</label>
+      <input type="text" id="taluk1" name="taluk" required>
+      <label for="district">ಜಿಲ್ಲೆ:</label>
+      <input type="text" id="district1" name="district" required>
+      <label for="caste">ಜಾತಿ:</label>
+      <input type="text" id="caste1" name="caste" required>
+      <label for="admissionNo">ಅಡಮಿಸ್ಸನ ನಂ:</label>
+      <input type="text" id="admissionNo1" name="admissionNo" required>
+      <label for="date">ಸ್ಥಳ:</label>
+      <input type="text" id="place1" name="place" >
+      <label for="date">ದಿನಾಂಕ:</label>
+      <input type="text" id="date1" name="date" pattern="\d{1,2}-\d{1,2}-\d{4}" placeholder="dd-mm-yyyy" required>
+      <button type="submit">Generate Certificate</button>
+  </form>
+  <button type="button" onclick="downloadPDFK()">Download PDF</button>
+  
+</div>
+<span id="ce">Click Downlod pdf button to download the certificate</span>
+<div class="certcontainer1">
+  <div id="certificateK" class="certificateK">
+      <div class="certificate-content1">
+          <span id="certName1">name</span>
+          <span id="dateinwords1">words</span>
+          <span id="BirthDate1">dateofbirth</span>
+          <span id="certCaste1">caste</span>
+          <span id="certBirthPlace1">Placeofbirth</span>
+          <span id="certTaluk1">taluk</span>
+          <span id="certDistrict1">jilla</span>
+          <span id="certAdmissionNo1">admissonno</span>
+          <span id="certDate1">date</span>
+          <span id="certplace1">place</span>
+          <span id="certclass1">class</span>
+      </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+
+
+</div>
+<div class="div4" id="div4">
+  <div class="LEcontainer">
+    <header class="hed">
+      <button onclick="dash()" class="bthed">Dashboard</button>
+      <button onclick="disLc()" class="bthed"><span class="sp">Kannada-Lc</span></button>
+      <button onclick="disLE()" class="bthed"><span class="sp">English-Lc</span></button>
+     
+      
+    </header>
+    <input type="text" id="search-bar" placeholder="Search...">
+    
+    <button id="search-btn3"> Register 5 </button>
+
+    <button class="butta" onclick="downloadPDF()">Download-certificate</button> 
+    <div  class="dola"  id="dola">
+    <div class="Detailveiw" id="Detail">
+    <h2>Student Details as per Register</h2>
+    <label for="De1">ದಾಖಲಾತಿ ಸಂಖ್ಯೆ /ವರ್ಷ Admoission No/year:</label>
+    <input type="text" id="De1" name="De1" readonly>
+    <label for="De2">ವಿದ್ಯಾರ್ಥಿ/ನಿಯ ಪೂರ್ಣ ಹೆಸರು Student's Name in Full:</label>
+    <input type="text" id="De2" name="De2" readonly>
+    <label for="De3"> ಹುಡುಗ ಅಥವಾ ಹುಡುಗಿ Boy/Girl:</label>
+    <input type="text" id="De3" name="De3" readonly>
+    <label for="De4">ಹುಟ್ಟಿದ ತಾರೀಖು ಮತ್ತು ವಯಸ್ಸು Date of Birth and age ಅಂಕಿ ಮತ್ತು ಅಕ್ಷರಗಳಲ್ಲಿ In Figures and words:</label>
+    <input type="text" id="De4" readonly>
+    <label for="De5">ತಂದೆ ಮತ್ತು ತಾಯಿಯ ಹೆಸರು father's and mother's Name:</label>
+    <input type="text" id="De5" name="De5" readonly>
+    <label for="De6">ತಂದೆಯ ಕಸಬು Father's accupation:</label>
+    <input type="text" id="De6" name="De6" readonly>
+    <label for="De7">ತಂದೆಯ ವಾರ್ಷಿಕ ವರಮಾನ Parent annual income:</label>
+    <input type="text" id="De7" name="De7" readonly>
+    <label for="De8">ಆಶ್ರಿತರ ಸಂಖ್ಯೆ Nos of dependent:</label>
+    <input type="text" id="De8" name="De8" readonly>
+    <label for="De9">ರಾಷ್ಟ್ರಿಯತೆ ಜಾತಿ ಮತ್ತು ಧರ್ಮ Nationality and caste and religion:</label>
+    <input type="text" id="De9" name="De9" readonly>
+    <label for="De10">ಮಾತೃ ಭಾಷೆ Mother Tough:</label>
+    <input type="text" id="De10" name="De10" readonly>
+    <label for="De11">ತಂದೆ ಅಥವಾ ಪೋಷಕರ ಹೆಸರು ಮತ್ತು ವಿಳಾಸ Father's and Guardian's Name and address:</label>
+    <input type="text" id="De11" name="De11"  readonly>
+    <label for="De12">ವಿದ್ಯಾರ್ಥಿಯ ಖಾಯಂ ವಿಳಾಸ Permnent address of student ಜನ್ಮ ಸ್ಥಳ:</label>
+    <input type="text" id="De12" name="De12" readonly>
+    <label for="De13">ಹೋಗುತ್ತಿದ್ದ ಹಿಂದಿನ ಪಾಠಶಾಲೆ Last school attended:</label>
+    <input type="text" id="De13" name="De13" readonly>
+    <label for="De14">ಹಿಂದಿನಶಾಲೆಯಲ್ಲಿ ಓದುತ್ತಿದ್ದ ತರಗಿತಿ Standerd Last studied:</label>
+    <input type="text" id="De14" name="De14" readonly>
+    <label for="De15">ಹಿಂದಿನಶಾಲೆಯ ವರ್ಗಾವಣೆ ಪತ್ರದ ನಂ ಮತ್ತು ದಿನಾಂಕ No .and Date of transfer certificate:</label>
+    <input type="text" id="De15" name="De15" readonly>
+    <label for="De16">ಪ್ರಸ್ತುತ ಶಾಲೆಗೆ ದಾಖಲೆ ಮಾಡಿದ ತರಗತಿ Standerd to which admitted with the section:</label>
+    <input type="text" id="De16" name="De16" readonly>
+    <label for="De17">ದಾಖಲಾತಿ ತಾರೀಖು Date of Admission:</label>
+    <input type="text" id="De17" name="De17" readonly>
+    <label for="De18">ತಂದೆ /ತಾಯಿ /ಪೋಷಕರ ಸಹಿ Father/Mother /Guardian Singnature /ಜನ್ಮಸ್ಥಳ:</label>
+    <input type="text" id="De18" name="De18" readonly>
+    <label for="De19">ದಾಖಲಾದಾಗಿನಿಂದ ಪ್ರತಿ ವರ್ಷದ ವಿದ್ಯಾರ್ಥಿ ಗಳಿಸಿದ ಪ್ರಗತಿ Subsequent Progress of the student in school every year from the date of admission :</label>
+    <input type="text" id="De19" name="De19" readonly>
+    <label for="De20">ಶಾಲೆ ಬಿಟ್ಟಾಗ ಓದುತ್ತಿದ್ದ ತರಗತಿ Class Studying while leaving the school:</label>
+    <input type="text" id="De20" name="De20" readonly>
+    <label for="De21">ಶಾಲೆ ಬಿಟ್ಟ ತಾರೀಖು Date of Leaving the School:</label>
+    <input type="text" id="De21" name="De21" readonly>
+    <label for="De22">ಶಾಲೆಯನ್ನು ಬಿಡಲು ಕಾರಣ Reason for Leaving The school:</label>
+    <input type="text" id="De22" name="De22" readonly>
+    <label for="De23">ಕೋಟ್ಟ ವರ್ಗಾವಣೆ ಪತ್ರದ ಸಂಖ್ಯೆ ಮತ್ತು ದಿನಾಂಕ No. and Date of TC Issued:</label>
+    <input type="text" id="De23" name="De23" readonly>
+    <label for="De24">ಮುಖ್ಯಸ್ಥರ ಸಹಿ ಮತ್ತು ಮುದ್ರೆ Signature and seal of the Head:</label>
+    <input type="text" id="De24" name="De24" readonly>
+    <label for="De25">ಷರಾ Remarks:</label>
+    <input type="text" id="De25" name="De25" readonly>
+</div>
+</div>
+<div class="LEcertcontainer">
+    <div id="LEcertificate" class="LEcertificate">
+        <div class="LEcertificate-content">
+            <input id="LECERTA" type="text" >
+            <input id="LECERTB" type="text" >
+            <input id="LECERTC" type="text" >
+            <input id="LECERTD" type="text" >
+            <input id="LECERTE" type="text" >
+            <input id="LECERTF" type="text" >
+            <input id="LECERTG" type="text" >
+            <input id="LECERTH" type="text" >
+            <input id="LECERTI" type="text" >
+            <input id="LECERTJ" type="text" >
+            <input id="LECERTK" type="text" >
+            <select id="LECERTL">
+                <option value="option1">ಇಲ್ಲ</option>
+                <option value="option2">ಹೌದು</option>
+             </select>
+             <select id="LECERTM">
+                <option value="option1">ಇಲ್ಲ</option>
+                <option value="option2">ಹೌದು</option>
+             </select>
+            <input id="LECERTN" type="text" >
+            <input id="LECERTO" type="text" >
+            <input id="LECERTP" type="text" >
+            <input id="LECERTQ" type="text" >
+            <input id="LECERTR" type="text" >
+            <input id="LECERTS" type="text" >
+            <input id="LECERTT" type="text" >
+            <input id="LECERTU" type="text" >
+            <input id="LECERTV" type="text" >
+            <input id="LECERTW" type="text" >
+            <select id="LECERTX">
+                <option value="option1">ಇಲ್ಲ</option>
+                <option value="option2">ಹೌದು</option>
+             </select>
+            <input id="LECERTY" type="text" >
+            <input id="LECERTZ" type="text" >
+            <input id="LECERTA1" type="text" >
+            <input id="LECERTB1" type="text" >
+            <input id="LECERTC1" type="text" >
+            <input id="LECERTD1" type="text" >
+            <input id="LECERTE1" type="text" >
+            <input id="LECERTF1" type="text" >
+            <input id="LECERTG1" type="text" >
+            <input id="LECERTH1" type="text" >
+            <input id="LECERTI1" type="text" >
+            <input id="LECERTJ1" type="text" >
+            <label for="LECERTJ1">Choose an option:</label>
+      
+
+           
+        </div>
+    </div>
+</div>
+</div>
+
+</div>
+<div class="div5" id="div5">
+  <div class="login-container">
+    <h2>Login</h2>
+    <div class="pattern-lock" id="patternLock"></div>
+    <div class="message" id="message"></div>
+    <button onclick="checkPattern()">Login</button>
+    <button class="reset" onclick="resetPattern()">Reset</button>
+</div>
+
+</div>
+
+<script>
+function disE() {
+ document.getElementById('div2').style.display = 'block';
+ document.getElementById('div1').style.display = 'none';
+ document.getElementById('div3').style.display = 'none';
+ document.getElementById('div4').style.display = 'none';
+ document.getElementById('div5').style.display = 'none';
+}
+function dash() {
+  document.getElementById('div2').style.display = 'none';
+  document.getElementById('div1').style.display = 'block';
+  document.getElementById('div3').style.display = 'none';
+  document.getElementById('div4').style.display = 'none';
+  document.getElementById('div5').style.display = 'none';
+}
+function disK(){
+  document.getElementById('div2').style.display = 'none';
+  document.getElementById('div1').style.display = 'none';
+  document.getElementById('div3').style.display = 'block';
+  document.getElementById('div4').style.display = 'none';
+  document.getElementById('div5').style.display = 'none';
+
+}
+function disLc(){
+  document.getElementById('div2').style.display = 'none';
+  document.getElementById('div1').style.display = 'none';
+  document.getElementById('div3').style.display = 'none';
+  document.getElementById('div4').style.display = 'block';
+  document.getElementById('div5').style.display = 'none';
+}
+
+function disLogin(){
+          let activeButtons = document.querySelectorAll(".pattern-lock button.active");
+           activeButtons.forEach(button => button.classList.remove("active"));
+           pattern = "";
+           document.getElementById('div2').style.display = 'none';
+           document.getElementById('div1').style.display = 'none';
+           document.getElementById('div3').style.display = 'none';
+           document.getElementById('div4').style.display = 'none';
+           document.getElementById('div5').style.display = 'block';
+           
+}
+  
+
+
+</script>
+<script>
+  document.getElementById('certificateForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+      var name = document.getElementById('name').value;
+      var birthDate = document.getElementById('Birthdate').value;
+      var inwords = document.getElementById('inwords').value;
+      var birthPlace = document.getElementById('birthPlace').value;
+      var caste = document.getElementById('caste').value;
+      var taluk = document.getElementById('taluk').value;
+      var district = document.getElementById('district').value;
+      var admissionNo = document.getElementById('admissionNo').value;
+      var date = document.getElementById('date').value;
+      
+
+      document.getElementById('certName').innerText = name;
+      document.getElementById('BirthDate').innerText = birthDate;
+      document.getElementById('dateinwords').innerText = inwords;
+      document.getElementById('certBirthPlace').innerText = birthPlace;
+      document.getElementById('certCaste').innerText = caste;
+      document.getElementById('certTaluk').innerText = taluk;
+      document.getElementById('certDistrict').innerText = district;
+      document.getElementById('certAdmissionNo').innerText = admissionNo;
+      document.getElementById('certDate').innerText = date;
+      
+
+      document.getElementById('certificate').style.display = 'block';
+  });
+
+  async function downloadPDF() {
+      const { jsPDF } = window.jspdf;
+      const certificate = document.getElementById('certificate');
+      
+      // Ensure certificate is a valid DOM element
+      if (!(certificate instanceof Element)) {
+          console.error('The specified element is not valid.');
+          return;
+      }
+
+      // Use html2canvas to capture the content of the certificate
+      const canvas = await html2canvas(certificate, {backgroundColor: null, scale: 2});
+      const imgData = canvas.toDataURL('image/png');
+      const pdf = new jsPDF();
+      const imgProps = pdf.getImageProperties(imgData);
+      const pdfWidth = pdf.internal.pageSize.getWidth();
+      const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+
+      // Add the image to the PDF
+      pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+      pdf.save('certificate.pdf');
+  }
+</script>
+<script>
+  document.getElementById('certificateFormK').addEventListener('submit', function(event) {
+      event.preventDefault();
+      var name = document.getElementById('name1').value;
+      var birthDate = document.getElementById('Birthdate1').value;
+      var inwords = document.getElementById('inwords1').value;
+      var birthPlace = document.getElementById('birthPlace1').value;
+      var caste = document.getElementById('caste1').value;
+      var taluk = document.getElementById('taluk1').value;
+      var district = document.getElementById('district1').value;
+      var admissionNo = document.getElementById('admissionNo1').value;
+      var date = document.getElementById('date1').value;
+      var clas = document.getElementById('class1').value;
+      var place = document.getElementById('place1').value;
+
+      document.getElementById('certName1').innerText = name;
+      document.getElementById('BirthDate1').innerText = birthDate;
+      document.getElementById('dateinwords1').innerText = inwords;
+      document.getElementById('certBirthPlace1').innerText = birthPlace;
+      document.getElementById('certCaste1').innerText = caste;
+      document.getElementById('certTaluk1').innerText = taluk;
+      document.getElementById('certDistrict1').innerText = district;
+      document.getElementById('certAdmissionNo1').innerText = admissionNo;
+      document.getElementById('certDate1').innerText = date;
+      document.getElementById('certclass1').innerText = clas;
+      document.getElementById('certplace1').innerText = place;
+     
+
+      document.getElementById('certificateK').style.display = 'block';
+  });
+
+  async function downloadPDFK() {
+      const { jsPDF } = window.jspdf;
+      const certificate = document.getElementById('certificateK');
+      
+      // Ensure certificate is a valid DOM element
+      if (!(certificate instanceof Element)) {
+          console.error('The specified element is not valid.');
+          return;
+      }
+
+      // Use html2canvas to capture the content of the certificate
+      const canvas = await html2canvas(certificate, {backgroundColor: null, scale: 2});
+      const imgData = canvas.toDataURL('image/png');
+      const pdf = new jsPDF();
+      const imgProps = pdf.getImageProperties(imgData);
+      const pdfWidth = pdf.internal.pageSize.getWidth();
+      const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+
+      // Add the image to the PDF
+      pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+      pdf.save('certificate.pdf');
+  }
+</script>
+<script>
+  document.getElementById('LcertificateForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+  var A = document.getElementById('A').value;
+  var B = document.getElementById('B').value;
+  var C = document.getElementById('C').value;
+  var D = document.getElementById('D').value;
+  var E = document.getElementById('E').value;
+  var F = document.getElementById('F').value;
+  var G = document.getElementById('G').value;
+  var H = document.getElementById('H').value;
+  var I = document.getElementById('I').value;
+  var J = document.getElementById('J').value;
+  var K = document.getElementById('K').value;
+  var L = document.getElementById('L').value;
+  var M = document.getElementById('M').value;
+  var N = document.getElementById('N').value;
+  var O = document.getElementById('O').value;
+  var P = document.getElementById('P').value;
+  var Q = document.getElementById('Q').value;
+  var R = document.getElementById('R').value;
+  var S = document.getElementById('S').value;
+  var T = document.getElementById('T').value;
+  var U = document.getElementById('U').value;
+  var V = document.getElementById('V').value;
+  var W = document.getElementById('W').value;
+  var X = document.getElementById('X').value;
+  var Y = document.getElementById('Y').value;
+  var Z = document.getElementById('Z').value;
+  var A1 = document.getElementById('A1').value;
+  var B1 = document.getElementById('B1').value;
+  var C1 = document.getElementById('C1').value;
+  var D1 = document.getElementById('D1').value;
+  var E1 = document.getElementById('E1').value;
+  var F1 = document.getElementById('F1').value;
+  var G1 = document.getElementById('G1').value;
+  var H1 = document.getElementById('H1').value;
+  var I1 = document.getElementById('I1').value;
+  var J1 = document.getElementById('J1').value;
+ 
+
+  document.getElementById('CERTA').innerText = A;
+  document.getElementById('CERTB').innerText = B;
+  document.getElementById('CERTC').innerText = C;
+  document.getElementById('CERTD').innerText = D;
+  document.getElementById('CERTE').innerText = E;
+  document.getElementById('CERTF').innerText = F;
+  document.getElementById('CERTG').innerText = G;
+  document.getElementById('CERTH').innerText = H;
+  document.getElementById('CERTI').innerText = I;
+  document.getElementById('CERTJ').innerText = J;
+  document.getElementById('CERTK').innerText = K;
+  document.getElementById('CERTL').innerText = L;
+  document.getElementById('CERTM').innerText = M;
+  document.getElementById('CERTN').innerText = N;
+  document.getElementById('CERTO').innerText = O;
+  document.getElementById('CERTP').innerText = P;
+  document.getElementById('CERTQ').innerText = Q;
+  document.getElementById('CERTR').innerText = R;
+  document.getElementById('CERTS').innerText = S;
+  document.getElementById('CERTT').innerText = T;
+  document.getElementById('CERTU').innerText = U;
+  document.getElementById('CERTV').innerText = V;
+  document.getElementById('CERTW').innerText = A1;
+  document.getElementById('CERTX').innerText = B1;
+  document.getElementById('CERTY').innerText = C1;
+  document.getElementById('CERTZ').innerText = W;
+  document.getElementById('CERTA1').innerText = D1;
+  document.getElementById('CERTB1').innerText = X;
+  document.getElementById('CERTC1').innerText = E1;
+  document.getElementById('CERTD1').innerText = F1;
+  document.getElementById('CERTE1').innerText = Y;
+  document.getElementById('CERTF1').innerText = G1;
+  document.getElementById('CERTG1').innerText = Z;
+  document.getElementById('CERTH1').innerText = H1;
+  document.getElementById('CERTI1').innerText = I1;
+  document.getElementById('CERTJ1').innerText = J1;
+ 
+
+      document.getElementById('Lcertificate').style.display = 'block';
+  });
+
+  async function downloadPDF() {
+const { jsPDF } = window.jspdf;
+const certificate = document.getElementById('Lcertificate');
+
+// Ensure certificate is a valid DOM element
+if (!(certificate instanceof Element)) {
+  console.error('The specified element is not valid.');
+  return;
+}
+
+// Use html2canvas to capture the content of the certificate
+const canvas = await html2canvas(certificate, {backgroundColor: null, scale: 2});
+const imgData = canvas.toDataURL('Leaving.jpg');
+const pdf = new jsPDF('p', 'in', 'legal'); // Set page size to legal (8.5 x 14 inches)
+const imgProps = pdf.getImageProperties(imgData);
+const pdfWidth = pdf.internal.pageSize.getWidth();
+const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+
+// Add the image to the PDF
+pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+pdf.save('Leaving-Certificate.pdf');
+}
+
+</script>
+<script>
+  document.getElementById('LEcertificateForm').addEventListener('submit', function(event) {
+      event.preventDefault();
+  var A = document.getElementById('A').value;
+  var B = document.getElementById('B').value;
+  var C = document.getElementById('C').value;
+  var D = document.getElementById('D').value;
+  var E = document.getElementById('E').value;
+  var F = document.getElementById('F').value;
+  var G = document.getElementById('G').value;
+  var H = document.getElementById('H').value;
+  var I = document.getElementById('I').value;
+  var J = document.getElementById('J').value;
+  var K = document.getElementById('K').value;
+  var L = document.getElementById('L').value;
+  var M = document.getElementById('M').value;
+  var N = document.getElementById('N').value;
+  var O = document.getElementById('O').value;
+  var P = document.getElementById('P').value;
+  var Q = document.getElementById('Q').value;
+  var R = document.getElementById('R').value;
+  var S = document.getElementById('S').value;
+  var T = document.getElementById('T').value;
+  var U = document.getElementById('U').value;
+  var V = document.getElementById('V').value;
+  var W = document.getElementById('W').value;
+  var X = document.getElementById('X').value;
+  var Y = document.getElementById('Y').value;
+  var Z = document.getElementById('Z').value;
+  var A1 = document.getElementById('A1').value;
+  var B1 = document.getElementById('B1').value;
+  var C1 = document.getElementById('C1').value;
+  var D1 = document.getElementById('D1').value;
+  var E1 = document.getElementById('E1').value;
+  var F1 = document.getElementById('F1').value;
+  var G1 = document.getElementById('G1').value;
+  var H1 = document.getElementById('H1').value;
+  
+ 
+
+  document.getElementById('LECERTA').innerText = A;
+  document.getElementById('LECERTB').innerText = B;
+  document.getElementById('LECERTC').innerText = C;
+  document.getElementById('LECERTD').innerText = D;
+  document.getElementById('LECERTE').innerText = E;
+  document.getElementById('LECERTF').innerText = F;
+  document.getElementById('LECERTG').innerText = G;
+  document.getElementById('LECERTH').innerText = H;
+  document.getElementById('LECERTI').innerText = I;
+  document.getElementById('LECERTJ').innerText = J;
+  document.getElementById('LECERTK').innerText = K;
+  document.getElementById('LECERTL').innerText = L;
+  document.getElementById('LECERTM').innerText = M;
+  document.getElementById('LECERTN').innerText = N;
+  document.getElementById('LECERTO').innerText = O;
+  document.getElementById('LECERTP').innerText = P;
+  document.getElementById('LECERTQ').innerText = Q;
+  document.getElementById('LECERTR').innerText = R;
+  document.getElementById('LECERTS').innerText = S;
+  document.getElementById('LECERTT').innerText = T;
+  document.getElementById('LECERTU').innerText = U;
+  document.getElementById('LECERTV').innerText = V;
+  document.getElementById('LECERTW').innerText = A1;
+  document.getElementById('LECERTX').innerText = B1;
+  document.getElementById('LECERTY').innerText = C1;
+  document.getElementById('LECERTZ').innerText = W;
+  document.getElementById('LECERTA1').innerText = D1;
+  document.getElementById('LECERTB1').innerText = X;
+  document.getElementById('LECERTC1').innerText = E1;
+  document.getElementById('LECERTD1').innerText = F1;
+  document.getElementById('LECERTE1').innerText = Y;
+  document.getElementById('LECERTF1').innerText = G1;
+  document.getElementById('LECERTG1').innerText = Z;
+  document.getElementById('LECERTH1').innerText = H1;
+  
+ 
+
+      document.getElementById('LEcertificate').style.display = 'block';
+  });
+
+  async function downloadPDF() {
+const { jsPDF } = window.jspdf;
+const certificate = document.getElementById('LEcertificate');
+
+// Ensure certificate is a valid DOM element
+if (!(certificate instanceof Element)) {
+  console.error('The specified element is not valid.');
+  return;
+}
+
+// Use html2canvas to capture the content of the certificate
+const canvas = await html2canvas(certificate, {backgroundColor: null, scale: 2});
+const imgData = canvas.toDataURL('Leaving.jpg');
+const pdf = new jsPDF('p', 'in', 'legal'); // Set page size to legal (8.5 x 14 inches)
+const imgProps = pdf.getImageProperties(imgData);
+const pdfWidth = pdf.internal.pageSize.getWidth();
+const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+
+// Add the image to the PDF
+pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+pdf.save('English Leaving-Certificate.pdf');
+}
+
+</script>
+<script>
+
+  async function downloadPDF() {
+const { jsPDF } = window.jspdf;
+const certificate = document.getElementById('LEcertificate');
+
+// Ensure certificate is a valid DOM element
+if (!(certificate instanceof Element)) {
+  console.error('The specified element is not valid.');
+  return;
+}
+
+// Use html2canvas to capture the content of the certificate
+const canvas = await html2canvas(certificate, {backgroundColor: null, scale: 2});
+const imgData = canvas.toDataURL('Leaving.jpg');
+const pdf = new jsPDF('p', 'in', 'legal'); // Set page size to legal (8.5 x 14 inches)
+const imgProps = pdf.getImageProperties(imgData);
+const pdfWidth = pdf.internal.pageSize.getWidth();
+const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+
+// Add the image to the PDF
+pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+pdf.save('English Leaving-Certificate.pdf');
+}
+
+</script>
+<script>
+  document.getElementById('search-btn1').addEventListener('click', searchSheet);
+  document.getElementById('font-size-slider').addEventListener('input', adjustFontSize);
+
+  function searchSheet() {
+      document.getElementById('dola').style.display = 'block';
+      const searchTerm = document.getElementById('search-bar').value.toLowerCase();
+      const sheetID = '1uZuW4r-rAhTXLcGMmI-Xh_9CzDi5aZ4WRUKdnziPC5k';  // Replace with your Google Sheet ID
+      const xlsxUrl = `https://docs.google.com/spreadsheets/d/${sheetID}/export?format=xlsx`;
+
+      fetch(xlsxUrl)
+          .then(response => response.arrayBuffer())
+          .then(data => {
+              const workbook = XLSX.read(data, { type: 'array' });
+              const firstSheetName = workbook.SheetNames[0]; // Replace with the correct sheet index or name
+              const worksheet = workbook.Sheets[firstSheetName];
+              const jsonSheet = XLSX.utils.sheet_to_json(worksheet, { header: 1,
+      raw: false,
+      dateNF: 'yyyy-mm-dd',
+      cellDates: true,
+      defval: '-------' });
+
+              let found = false;
+              jsonSheet.forEach(row => {
+                  if (row.some(cell => String(cell).toLowerCase().includes(searchTerm))) {
+                       // Adjust index based on your columns
+                   
+                      // Adjust index based on your columns
+                      document.getElementById('LECERTD').value = row[0] || ''; // Adjust index based on your columns
+                      // Adjust index based on your columns
+                      document.getElementById('LECERTF').value = row[1] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTG').value = row[2] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTH').value = row[8] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTI').value = row[8] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTJ').value = row[9] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTK').value = row[4] || ''; // Adjust index based on your columns
+                      // Adjust index based on your columns
+                      document.getElementById('LECERTM').value = row[12] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTN').value = row[3] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTO').value = row[14] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTP').value = row[11] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTQ').value = row[11] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTR').value = row[11] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTS').value = row[11] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTT').value = row[26] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTU').value = row[20] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTV').value = row[21] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTW').value = row[22] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTX').value = row[23] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTY').value = row[24] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTZ').value = row[9] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTA1').value = row[26] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTB1').value = row[27] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTC1').value = row[28] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTD1').value = row[29] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTE1').value = row[30] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTF1').value = row[31] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTG1').value = row[32] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTH1').value = row[33] || ''; 
+                      for (let i = 1; i <= 25; i++) {
+                   document.getElementById(`De${i}`).value = row[i-1] || '';
+                       }
+
+                      found = true;
+                  }
+              });
+
+              if (!found) {
+                  document.getElementById('results').innerText = 'No results found';
+              }
+          })
+          .catch(error => console.error('Error:', error));
+  }
+
+  function adjustFontSize() {
+      const fontSize = document.getElementById('font-size-slider').value + 'px';
+      const inputs = document.querySelectorAll('#results input');
+      inputs.forEach(input => {
+          input.style.fontSize = fontSize;
+      });
+  }
+</script>
+<script>
+  document.getElementById('search-btn2').addEventListener('click', searchSheet);
+  document.getElementById('font-size-slider').addEventListener('input', adjustFontSize);
+
+  function searchSheet() {
+      document.getElementById('dola').style.display = 'block';
+      const searchTerm = document.getElementById('search-bar').value.toLowerCase();
+      const sheetID = '1uZuW4r-rAhTXLcGMmI-Xh_9CzDi5aZ4WRUKdnziPC5k';  // Replace with your Google Sheet ID
+      const xlsxUrl = `https://docs.google.com/spreadsheets/d/${sheetID}/export?format=xlsx`;
+
+      fetch(xlsxUrl)
+          .then(response => response.arrayBuffer())
+          .then(data => {
+              const workbook = XLSX.read(data, { type: 'array' });
+              const firstSheetName = workbook.SheetNames[1]; // Replace with the correct sheet index or name
+              const worksheet = workbook.Sheets[firstSheetName];
+              const jsonSheet = XLSX.utils.sheet_to_json(worksheet, { header: 1,
+      raw: false,
+      dateNF: 'yyyy-mm-dd',
+      cellDates: true,
+      defval: '-------' });
+
+              let found = false;
+              jsonSheet.forEach(row => {
+                  if (row.some(cell => String(cell).toLowerCase().includes(searchTerm))) {
+                       // Adjust index based on your columns
+                   
+                      // Adjust index based on your columns
+                      document.getElementById('LECERTD').value = row[0] || ''; // Adjust index based on your columns
+                      // Adjust index based on your columns
+                      document.getElementById('LECERTF').value = row[1] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTG').value = row[2] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTH').value = row[8] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTI').value = row[8] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTJ').value = row[9] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTK').value = row[4] || ''; // Adjust index based on your columns
+                      // Adjust index based on your columns
+                      document.getElementById('LECERTM').value = row[12] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTN').value = row[3] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTO').value = row[14] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTP').value = row[11] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTQ').value = row[11] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTR').value = row[11] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTS').value = row[11] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTT').value = row[26] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTU').value = row[20] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTV').value = row[21] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTW').value = row[22] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTX').value = row[23] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTY').value = row[24] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTZ').value = row[9] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTA1').value = row[26] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTB1').value = row[27] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTC1').value = row[28] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTD1').value = row[29] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTE1').value = row[30] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTF1').value = row[31] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTG1').value = row[32] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTH1').value = row[33] || ''; 
+                      for (let i = 1; i <= 25; i++) {
+                   document.getElementById(`De${i}`).value = row[i-1] || '';
+                       }
+
+                      found = true;
+                  }
+              });
+
+              if (!found) {
+                  document.getElementById('results').innerText = 'No results found';
+              }
+          })
+          .catch(error => console.error('Error:', error));
+  }
+
+  function adjustFontSize() {
+      const fontSize = document.getElementById('font-size-slider').value + 'px';
+      const inputs = document.querySelectorAll('#results input');
+      inputs.forEach(input => {
+          input.style.fontSize = fontSize;
+      });
+  }
+</script>
+<script>
+  document.getElementById('search-btn3').addEventListener('click', searchSheet);
+  document.getElementById('font-size-slider').addEventListener('input', adjustFontSize);
+
+  function searchSheet() {
+      document.getElementById('dola').style.display = 'block';
+      const searchTerm = document.getElementById('search-bar').value.toLowerCase();
+      const sheetID = '1uZuW4r-rAhTXLcGMmI-Xh_9CzDi5aZ4WRUKdnziPC5k';  // Replace with your Google Sheet ID
+      const xlsxUrl = `https://docs.google.com/spreadsheets/d/${sheetID}/export?format=xlsx`;
+
+      fetch(xlsxUrl)
+          .then(response => response.arrayBuffer())
+          .then(data => {
+              const workbook = XLSX.read(data, { type: 'array' });
+              const firstSheetName = workbook.SheetNames[2]; // Replace with the correct sheet index or name
+              const worksheet = workbook.Sheets[firstSheetName];
+              const jsonSheet = XLSX.utils.sheet_to_json(worksheet, { header: 1,
+      raw: false,
+      dateNF: 'yyyy-mm-dd',
+      cellDates: true,
+      defval: '-------' });
+
+              let found = false;
+              jsonSheet.forEach(row => {
+                  if (row.some(cell => String(cell).toLowerCase().includes(searchTerm))) {
+                       // Adjust index based on your columns
+                   
+                      // Adjust index based on your columns
+                      document.getElementById('LECERTD').value = row[0] || ''; // Adjust index based on your columns
+                      // Adjust index based on your columns
+                      document.getElementById('LECERTF').value = row[1] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTG').value = row[2] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTH').value = row[8] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTI').value = row[8] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTJ').value = row[9] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTK').value = row[4] || ''; // Adjust index based on your columns
+                      // Adjust index based on your columns
+                      document.getElementById('LECERTM').value = row[12] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTN').value = row[3] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTO').value = row[14] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTP').value = row[11] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTQ').value = row[11] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTR').value = row[11] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTS').value = row[11] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTT').value = row[26] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTU').value = row[20] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTV').value = row[21] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTW').value = row[22] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTX').value = row[23] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTY').value = row[24] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTZ').value = row[9] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTA1').value = row[26] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTB1').value = row[27] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTC1').value = row[28] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTD1').value = row[29] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTE1').value = row[30] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTF1').value = row[31] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTG1').value = row[32] || ''; // Adjust index based on your columns
+                      document.getElementById('LECERTH1').value = row[33] || ''; 
+                      for (let i = 1; i <= 25; i++) {
+                   document.getElementById(`De${i}`).value = row[i-1] || '';
+                       }
+
+                      found = true;
+                  }
+              });
+
+              if (!found) {
+                  document.getElementById('results').innerText = 'No results found';
+              }
+          })
+          .catch(error => console.error('Error:', error));
+  }
+
+  function adjustFontSize() {
+      const fontSize = document.getElementById('font-size-slider').value + 'px';
+      const inputs = document.querySelectorAll('#results input');
+      inputs.forEach(input => {
+          input.style.fontSize = fontSize;
+      });
+  }
+</script>
+<script>
+  window.onload = function() {
+      var today = new Date();
+      var day = ("0" + today.getDate()).slice(-2);
+      var month = ("0" + (today.getMonth() + 1)).slice(-2);
+      var date = day + "/" + month + "/" + today.getFullYear();
+      document.getElementById("LECERTB").value = date;
+  };
+</script>
+
+<script>
+  let pattern = "";
+  let patternLock = document.getElementById("patternLock");
+  let message = document.getElementById("message");
+
+  // Function to create pattern lock
+  function createPatternLock() {
+      let buttons = "";
+      for (let i = 1; i <= 9; i++) {
+          buttons += `<button onclick="toggleButton(${i})" id="button${i}">${i}</button>`;
+          if (i % 3 === 0) {
+              buttons += "<br>";
+          }
+      }
+      patternLock.innerHTML = buttons;
+  }
+
+  // Function to toggle button selection
+  function toggleButton(num) {
+      let button = document.getElementById(`button${num}`);
+      if (button.classList.contains("active")) {
+          button.classList.remove("active");
+          pattern = pattern.replace(num, "");
+      } else {
+          button.classList.add("active");
+          pattern += num;
+      }
+  }
+
+  // Function to check pattern
+  function checkPattern() {
+      // Sample pattern (You can replace this with your logic to check against a stored pattern)
+      let storedPattern = "123";
+      if (pattern === storedPattern) {
+          message.innerHTML = "Login successful!";
+          message.style.color = "green";
+          // Redirect to dashboard.html after successful login
+           document.getElementById('div2').style.display = 'none';
+           document.getElementById('div1').style.display = 'block';
+           document.getElementById('div3').style.display = 'none';
+           document.getElementById('div4').style.display = 'none';
+           document.getElementById('div5').style.display = 'none';
+      } else {
+          message.innerHTML = "Incorrect pattern, please try again.";
+          message.style.color = "red";
+          pattern = "";
+          setTimeout(() => {
+              let activeButtons = document.querySelectorAll(".pattern-lock button.active");
+              activeButtons.forEach(button => button.classList.remove("active"));
+          }, 200);
+      }
+  }
+
+  function resetPattern() {
+      let activeButtons = document.querySelectorAll(".pattern-lock button.active");
+      activeButtons.forEach(button => button.classList.remove("active"));
+      pattern = "";
+  }
+
+  createPatternLock();
+</script>
+</body>
+</html>
