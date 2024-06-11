@@ -624,6 +624,7 @@
 
         button:hover {
             background-color: #218838;
+            transform: scale(1.1);
         }
         #search-bar {
             width: 30%;
@@ -1543,7 +1544,7 @@ select {
         <input type="text" id="date" name="date" pattern="\d{1,2}-\d{1,2}-\d{4}" placeholder="dd-mm-yyyy" required>
         <button type="submit">Generate Certificate</button>
     </form>
-    <button type="button" onclick="downloadPDF()">Download PDF</button>
+    <button type="button" onclick="downloadPDFE()">Download PDF</button>
     
 </div>
 <span id="ce">Click Downlod pdf button to download the certificate</span>
@@ -1846,28 +1847,56 @@ function disLogin(){
       document.getElementById('certificate').style.display = 'block';
   });
 
-  async function downloadPDF() {
-      const { jsPDF } = window.jspdf;
-      const certificate = document.getElementById('certificate');
-      
-      // Ensure certificate is a valid DOM element
-      if (!(certificate instanceof Element)) {
-          console.error('The specified element is not valid.');
-          return;
-      }
+  async function downloadPDFE() {
+    const { jsPDF } = window.jspdf;
+    const certificate = document.getElementById('certificate');
 
-      // Use html2canvas to capture the content of the certificate
-      const canvas = await html2canvas(certificate, {backgroundColor: null, scale: 2});
-      const imgData = canvas.toDataURL('ENGLISH BIRTH CERTIFICATE.JPG');
-      const pdf = new jsPDF();
-      const imgProps = pdf.getImageProperties(imgData);
-      const pdfWidth = pdf.internal.pageSize.getWidth();
-      const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+    // Ensure certificate is a valid DOM element
+    if (!(certificate instanceof Element)) {
+        console.error('The specified element is not valid.');
+        return;
+    }
 
-      // Add the image to the PDF
-      pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
-      pdf.save('certificate.pdf');
-  }
+    // Preload images if any
+    const images = certificate.getElementsByTagName('img');
+    const imagePromises = Array.from(images).map((img) => {
+        return new Promise((resolve, reject) => {
+            const image = new Image();
+            image.onload = resolve;
+            image.onerror = reject;
+            image.src = img.src;
+        });
+    });
+
+    await Promise.all(imagePromises);
+
+    // Use requestAnimationFrame for smoother rendering
+    await new Promise((resolve) => {
+        requestAnimationFrame(async () => {
+            // Use html2canvas to capture the content of the certificate
+            const canvas = await html2canvas(certificate, { backgroundColor: null, scale: 2 });
+            const imgData = canvas.toDataURL('image/png');
+            const pdf = new jsPDF();
+            const imgProps = pdf.getImageProperties(imgData);
+            const pdfWidth = pdf.internal.pageSize.getWidth();
+            const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+
+            // Add the image to the PDF
+            pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+            
+            // Save the PDF
+            const pdfBlob = pdf.output('blob');
+
+            // Create a URL from the Blob and open it in a new tab
+            const pdfURL = URL.createObjectURL(pdfBlob);
+            window.open(pdfURL, '_blank');
+            
+            resolve();
+        });
+    });
+}
+
+
 </script>
 <script>
   document.getElementById('certificateFormK').addEventListener('submit', function(event) {
@@ -1901,261 +1930,105 @@ function disLogin(){
   });
 
   async function downloadPDFK() {
-      const { jsPDF } = window.jspdf;
-      const certificate = document.getElementById('certificateK');
-      
-      // Ensure certificate is a valid DOM element
-      if (!(certificate instanceof Element)) {
-          console.error('The specified element is not valid.');
-          return;
-      }
+    const { jsPDF } = window.jspdf;
+    const certificate = document.getElementById('certificateK');
 
-      // Use html2canvas to capture the content of the certificate
-      const canvas = await html2canvas(certificate, {backgroundColor: null, scale: 2});
-      const imgData = canvas.toDataURL('image/png');
-      const pdf = new jsPDF();
-      const imgProps = pdf.getImageProperties(imgData);
-      const pdfWidth = pdf.internal.pageSize.getWidth();
-      const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+    // Ensure certificate is a valid DOM element
+    if (!(certificate instanceof Element)) {
+        console.error('The specified element is not valid.');
+        return;
+    }
 
-      // Add the image to the PDF
-      pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
-      pdf.save('certificate.pdf');
-  }
+    // Preload images if any
+    const images = certificate.getElementsByTagName('img');
+    const imagePromises = Array.from(images).map((img) => {
+        return new Promise((resolve, reject) => {
+            const image = new Image();
+            image.onload = resolve;
+            image.onerror = reject;
+            image.src = img.src;
+        });
+    });
+
+    await Promise.all(imagePromises);
+
+    // Use requestAnimationFrame for smoother rendering
+    await new Promise((resolve) => {
+        requestAnimationFrame(async () => {
+            // Use html2canvas to capture the content of the certificate
+            const canvas = await html2canvas(certificate, { backgroundColor: null, scale: 2 });
+            const imgData = canvas.toDataURL('image/png');
+            const pdf = new jsPDF();
+            const imgProps = pdf.getImageProperties(imgData);
+            const pdfWidth = pdf.internal.pageSize.getWidth();
+            const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+
+            // Add the image to the PDF
+            pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+            
+            // Save the PDF
+            const pdfBlob = pdf.output('blob');
+
+            // Create a URL from the Blob and open it in a new tab
+            const pdfURL = URL.createObjectURL(pdfBlob);
+            window.open(pdfURL, '_blank');
+            
+            resolve();
+        });
+    });
+}
 </script>
-<script>
-  document.getElementById('LcertificateForm').addEventListener('submit', function(event) {
-      event.preventDefault();
-  var A = document.getElementById('A').value;
-  var B = document.getElementById('B').value;
-  var C = document.getElementById('C').value;
-  var D = document.getElementById('D').value;
-  var E = document.getElementById('E').value;
-  var F = document.getElementById('F').value;
-  var G = document.getElementById('G').value;
-  var H = document.getElementById('H').value;
-  var I = document.getElementById('I').value;
-  var J = document.getElementById('J').value;
-  var K = document.getElementById('K').value;
-  var L = document.getElementById('L').value;
-  var M = document.getElementById('M').value;
-  var N = document.getElementById('N').value;
-  var O = document.getElementById('O').value;
-  var P = document.getElementById('P').value;
-  var Q = document.getElementById('Q').value;
-  var R = document.getElementById('R').value;
-  var S = document.getElementById('S').value;
-  var T = document.getElementById('T').value;
-  var U = document.getElementById('U').value;
-  var V = document.getElementById('V').value;
-  var W = document.getElementById('W').value;
-  var X = document.getElementById('X').value;
-  var Y = document.getElementById('Y').value;
-  var Z = document.getElementById('Z').value;
-  var A1 = document.getElementById('A1').value;
-  var B1 = document.getElementById('B1').value;
-  var C1 = document.getElementById('C1').value;
-  var D1 = document.getElementById('D1').value;
-  var E1 = document.getElementById('E1').value;
-  var F1 = document.getElementById('F1').value;
-  var G1 = document.getElementById('G1').value;
-  var H1 = document.getElementById('H1').value;
-  var I1 = document.getElementById('I1').value;
-  var J1 = document.getElementById('J1').value;
- 
 
-  document.getElementById('CERTA').innerText = A;
-  document.getElementById('CERTB').innerText = B;
-  document.getElementById('CERTC').innerText = C;
-  document.getElementById('CERTD').innerText = D;
-  document.getElementById('CERTE').innerText = E;
-  document.getElementById('CERTF').innerText = F;
-  document.getElementById('CERTG').innerText = G;
-  document.getElementById('CERTH').innerText = H;
-  document.getElementById('CERTI').innerText = I;
-  document.getElementById('CERTJ').innerText = J;
-  document.getElementById('CERTK').innerText = K;
-  document.getElementById('CERTL').innerText = L;
-  document.getElementById('CERTM').innerText = M;
-  document.getElementById('CERTN').innerText = N;
-  document.getElementById('CERTO').innerText = O;
-  document.getElementById('CERTP').innerText = P;
-  document.getElementById('CERTQ').innerText = Q;
-  document.getElementById('CERTR').innerText = R;
-  document.getElementById('CERTS').innerText = S;
-  document.getElementById('CERTT').innerText = T;
-  document.getElementById('CERTU').innerText = U;
-  document.getElementById('CERTV').innerText = V;
-  document.getElementById('CERTW').innerText = A1;
-  document.getElementById('CERTX').innerText = B1;
-  document.getElementById('CERTY').innerText = C1;
-  document.getElementById('CERTZ').innerText = W;
-  document.getElementById('CERTA1').innerText = D1;
-  document.getElementById('CERTB1').innerText = X;
-  document.getElementById('CERTC1').innerText = E1;
-  document.getElementById('CERTD1').innerText = F1;
-  document.getElementById('CERTE1').innerText = Y;
-  document.getElementById('CERTF1').innerText = G1;
-  document.getElementById('CERTG1').innerText = Z;
-  document.getElementById('CERTH1').innerText = H1;
-  document.getElementById('CERTI1').innerText = I1;
-  document.getElementById('CERTJ1').innerText = J1;
- 
 
-      document.getElementById('Lcertificate').style.display = 'block';
-  });
-
-  async function downloadPDF() {
-const { jsPDF } = window.jspdf;
-const certificate = document.getElementById('Lcertificate');
-
-// Ensure certificate is a valid DOM element
-if (!(certificate instanceof Element)) {
-  console.error('The specified element is not valid.');
-  return;
-}
-
-// Use html2canvas to capture the content of the certificate
-const canvas = await html2canvas(certificate, {backgroundColor: null, scale: 2});
-const imgData = canvas.toDataURL('Leaving.jpg');
-const pdf = new jsPDF('p', 'in', 'legal'); // Set page size to legal (8.5 x 14 inches)
-const imgProps = pdf.getImageProperties(imgData);
-const pdfWidth = pdf.internal.pageSize.getWidth();
-const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
-
-// Add the image to the PDF
-pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
-pdf.save('Leaving-Certificate.pdf');
-}
-
-</script>
-<script>
-  document.getElementById('LEcertificateForm').addEventListener('submit', function(event) {
-      event.preventDefault();
-  var A = document.getElementById('A').value;
-  var B = document.getElementById('B').value;
-  var C = document.getElementById('C').value;
-  var D = document.getElementById('D').value;
-  var E = document.getElementById('E').value;
-  var F = document.getElementById('F').value;
-  var G = document.getElementById('G').value;
-  var H = document.getElementById('H').value;
-  var I = document.getElementById('I').value;
-  var J = document.getElementById('J').value;
-  var K = document.getElementById('K').value;
-  var L = document.getElementById('L').value;
-  var M = document.getElementById('M').value;
-  var N = document.getElementById('N').value;
-  var O = document.getElementById('O').value;
-  var P = document.getElementById('P').value;
-  var Q = document.getElementById('Q').value;
-  var R = document.getElementById('R').value;
-  var S = document.getElementById('S').value;
-  var T = document.getElementById('T').value;
-  var U = document.getElementById('U').value;
-  var V = document.getElementById('V').value;
-  var W = document.getElementById('W').value;
-  var X = document.getElementById('X').value;
-  var Y = document.getElementById('Y').value;
-  var Z = document.getElementById('Z').value;
-  var A1 = document.getElementById('A1').value;
-  var B1 = document.getElementById('B1').value;
-  var C1 = document.getElementById('C1').value;
-  var D1 = document.getElementById('D1').value;
-  var E1 = document.getElementById('E1').value;
-  var F1 = document.getElementById('F1').value;
-  var G1 = document.getElementById('G1').value;
-  var H1 = document.getElementById('H1').value;
-  
- 
-
-  document.getElementById('LECERTA').innerText = A;
-  document.getElementById('LECERTB').innerText = B;
-  document.getElementById('LECERTC').innerText = C;
-  document.getElementById('LECERTD').innerText = D;
-  document.getElementById('LECERTE').innerText = E;
-  document.getElementById('LECERTF').innerText = F;
-  document.getElementById('LECERTG').innerText = G;
-  document.getElementById('LECERTH').innerText = H;
-  document.getElementById('LECERTI').innerText = I;
-  document.getElementById('LECERTJ').innerText = J;
-  document.getElementById('LECERTK').innerText = K;
-  document.getElementById('LECERTL').innerText = L;
-  document.getElementById('LECERTM').innerText = M;
-  document.getElementById('LECERTN').innerText = N;
-  document.getElementById('LECERTO').innerText = O;
-  document.getElementById('LECERTP').innerText = P;
-  document.getElementById('LECERTQ').innerText = Q;
-  document.getElementById('LECERTR').innerText = R;
-  document.getElementById('LECERTS').innerText = S;
-  document.getElementById('LECERTT').innerText = T;
-  document.getElementById('LECERTU').innerText = U;
-  document.getElementById('LECERTV').innerText = V;
-  document.getElementById('LECERTW').innerText = A1;
-  document.getElementById('LECERTX').innerText = B1;
-  document.getElementById('LECERTY').innerText = C1;
-  document.getElementById('LECERTZ').innerText = W;
-  document.getElementById('LECERTA1').innerText = D1;
-  document.getElementById('LECERTB1').innerText = X;
-  document.getElementById('LECERTC1').innerText = E1;
-  document.getElementById('LECERTD1').innerText = F1;
-  document.getElementById('LECERTE1').innerText = Y;
-  document.getElementById('LECERTF1').innerText = G1;
-  document.getElementById('LECERTG1').innerText = Z;
-  document.getElementById('LECERTH1').innerText = H1;
-  
- 
-
-      document.getElementById('LEcertificate').style.display = 'block';
-  });
-
-  async function downloadPDF() {
-const { jsPDF } = window.jspdf;
-const certificate = document.getElementById('LEcertificate');
-
-// Ensure certificate is a valid DOM element
-if (!(certificate instanceof Element)) {
-  console.error('The specified element is not valid.');
-  return;
-}
-
-// Use html2canvas to capture the content of the certificate
-const canvas = await html2canvas(certificate, {backgroundColor: null, scale: 2});
-const imgData = canvas.toDataURL('Leaving.jpg');
-const pdf = new jsPDF('p', 'in', 'legal'); // Set page size to legal (8.5 x 14 inches)
-const imgProps = pdf.getImageProperties(imgData);
-const pdfWidth = pdf.internal.pageSize.getWidth();
-const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
-
-// Add the image to the PDF
-pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
-pdf.save('English Leaving-Certificate.pdf');
-}
-
-</script>
 <script>
 
-  async function downloadPDF() {
-const { jsPDF } = window.jspdf;
-const certificate = document.getElementById('LEcertificate');
+async function downloadPDF() {
+    const { jsPDF } = window.jspdf;
+    const certificate = document.getElementById('LEcertificate');
 
-// Ensure certificate is a valid DOM element
-if (!(certificate instanceof Element)) {
-  console.error('The specified element is not valid.');
-  return;
-}
+    // Ensure certificate is a valid DOM element
+    if (!(certificate instanceof Element)) {
+        console.error('The specified element is not valid.');
+        return;
+    }
 
-// Use html2canvas to capture the content of the certificate
-const canvas = await html2canvas(certificate, {backgroundColor: null, scale: 2});
-const imgData = canvas.toDataURL('Leaving.jpg');
-const pdf = new jsPDF('p', 'in', 'legal'); // Set page size to legal (8.5 x 14 inches)
-const imgProps = pdf.getImageProperties(imgData);
-const pdfWidth = pdf.internal.pageSize.getWidth();
-const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+    // Preload images if any
+    const images = certificate.getElementsByTagName('img');
+    const imagePromises = Array.from(images).map((img) => {
+        return new Promise((resolve, reject) => {
+            const image = new Image();
+            image.onload = resolve;
+            image.onerror = reject;
+            image.src = img.src;
+        });
+    });
 
-// Add the image to the PDF
-pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
-pdf.save('English Leaving-Certificate.pdf');
+    await Promise.all(imagePromises);
+
+    // Use requestAnimationFrame for smoother rendering
+    await new Promise((resolve) => {
+        requestAnimationFrame(async () => {
+            // Use html2canvas to capture the content of the certificate
+            const canvas = await html2canvas(certificate, { backgroundColor: null, scale: 2 });
+            const imgData = canvas.toDataURL('image/png');
+            const pdf = new jsPDF();
+            const imgProps = pdf.getImageProperties(imgData);
+            const pdfWidth = pdf.internal.pageSize.getWidth();
+            const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+
+            // Add the image to the PDF
+            pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
+            
+            // Save the PDF
+            const pdfBlob = pdf.output('blob');
+
+            // Create a URL from the Blob and open it in a new tab
+            const pdfURL = URL.createObjectURL(pdfBlob);
+            window.open(pdfURL, '_blank');
+            
+            resolve();
+        });
+    });
 }
 
 </script>
@@ -2478,3 +2351,4 @@ pdf.save('English Leaving-Certificate.pdf');
 </script>
 </body>
 </html>
+
