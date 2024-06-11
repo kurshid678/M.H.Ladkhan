@@ -1858,7 +1858,7 @@ function disLogin(){
 
       // Use html2canvas to capture the content of the certificate
       const canvas = await html2canvas(certificate, {backgroundColor: null, scale: 2});
-      const imgData = canvas.toDataURL('image/png');
+      const imgData = canvas.toDataURL('ENGLISH BIRTH CERTIFICATE.JPG');
       const pdf = new jsPDF();
       const imgProps = pdf.getImageProperties(imgData);
       const pdfWidth = pdf.internal.pageSize.getWidth();
