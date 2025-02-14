@@ -2029,25 +2029,47 @@ function disLogin(){
 async function downloadPDF() {
     const { jsPDF } = window.jspdf;
     const certificate = document.getElementById('LEcertificate');
-    
-    // Ensure certificate is a valid DOM element
+
     if (!(certificate instanceof Element)) {
         console.error('The specified element is not valid.');
         return;
     }
 
-    // Use html2canvas to capture the content of the certificate
-    const canvas = await html2canvas(certificate, {backgroundColor: null, scale: 2});
-    const imgData = canvas.toDataURL('Leaving.jpg');
-    const pdf = new jsPDF('p', 'in', 'legal'); // Set page size to legal (8.5 x 14 inches)
-    const imgProps = pdf.getImageProperties(imgData);
-    const pdfWidth = pdf.internal.pageSize.getWidth();
-    const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+    try {
+        // Capture certificate with higher scale for better quality
+        const canvas = await html2canvas(certificate, {
+            backgroundColor: null,
+            scale: 5, // Increased scale for higher resolution
+            useCORS: true,
+            logging: true
+        });
 
-    // Add the image to the PDF
-    pdf.addImage(imgData, 'PNG', 0, 0, pdfWidth, pdfHeight);
-    pdf.save(' Leaving-Certificate.pdf');
+        // Convert canvas to high-quality JPEG image data
+        const imgData = canvas.toDataURL('image/jpeg', 1.0); // Use JPEG format with max quality
+
+        // Create a new PDF with high resolution
+        const pdf = new jsPDF({
+            orientation: 'portrait',
+            unit: 'in',
+            format: [8.5, 14], // Legal page size in inches
+            compress: true // Enable compression for better handling
+        });
+
+        // Get image properties and calculate dimensions
+        const imgProps = pdf.getImageProperties(imgData);
+        const pdfWidth = pdf.internal.pageSize.getWidth();
+        const pdfHeight = (imgProps.height * pdfWidth) / imgProps.width;
+
+        // Add high-quality image to PDF with 'FAST' rendering
+        pdf.addImage(imgData, 'JPEG', 0, 0, pdfWidth, pdfHeight, undefined, 'FAST');
+
+        // Save the PDF with a filename
+        pdf.save('Leaving-Certificate.pdf');
+    } catch (error) {
+        console.error('Error generating PDF:', error);
+    }
 }
+
 </script>
 <script>
   document.getElementById('search-btn1').addEventListener('click', searchSheet);
